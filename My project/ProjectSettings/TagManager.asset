@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - RedGround
   - GreenGround
+  - OrangeGround
   layers:
   - Default
   - TransparentFX
