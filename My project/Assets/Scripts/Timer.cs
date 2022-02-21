@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    float currentTime = 0f;
+    public float currentTime = 0f;
 
     [SerializeField] Text timerText;
 
@@ -19,8 +19,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        currentTime = (float)System.Math.Round(currentTime, 2);
-        Debug.Log(currentTime);
+        currentTime = (float)System.Math.Round(currentTime, 2); //round to two places after dot
         timerText.text = currentTime.ToString();
     }
 }
