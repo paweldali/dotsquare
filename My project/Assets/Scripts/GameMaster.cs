@@ -11,6 +11,10 @@ public class GameMaster : MonoBehaviour
 
     public bool isLevelCompleted = false; 
 
+    public float levelTime;
+
+    private Timer timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +27,20 @@ public class GameMaster : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        //timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
 
     // Update is called once per frame
     void Update()
     {
        if(isLevelCompleted){
-           Debug.Log("level completed!");
+           timer = GameObject.Find("Timer").GetComponent<Timer>();
+           levelTime = timer.getCurrentTime();
+           Debug.Log("level completed with time:" + levelTime.ToString());
+           
            isLevelCompleted = false;
+           levelTime = -1.0f;
        }
     }
 }

@@ -12,14 +12,13 @@ public class FinishLine : MonoBehaviour
         if (finishLine.CompareTag("Player"))
         {
             gm.isLevelCompleted = true;
-
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
     }
 
     // Update is called once per frame
