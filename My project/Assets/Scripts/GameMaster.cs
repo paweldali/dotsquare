@@ -9,6 +9,8 @@ public class GameMaster : MonoBehaviour
 
     public Vector2 lastCheckPointPos;
 
+    public bool isLevelCompleted = false; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,9 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+       if(isLevelCompleted){
+           Debug.Log("level completed!");
+           isLevelCompleted = false;
+       }
     }
 }

@@ -6,11 +6,12 @@ public class Checkpoint : MonoBehaviour
 {
     private GameMaster gm;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D checkpoint)
     {
-        if (other.CompareTag("Player"))
+        if (checkpoint.CompareTag("Player"))
         {
             gm.lastCheckPointPos = transform.position;
+            Debug.Log("Checkpoint!");
         }
     }
 

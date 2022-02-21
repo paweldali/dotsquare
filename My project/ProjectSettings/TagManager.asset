@@ -10,6 +10,7 @@ TagManager:
   - OrangeGround
   - PurpleGround
   - GM
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
