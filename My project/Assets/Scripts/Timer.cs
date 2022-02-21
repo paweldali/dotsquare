@@ -19,7 +19,6 @@ public class Timer : MonoBehaviour
     void Update()
     {
         currentTime += Time.deltaTime;
-        currentTime = (float)System.Math.Round(currentTime, 2); //round to two places after dot
-        timerText.text = currentTime.ToString();
+        timerText.text = System.Math.Round(currentTime, 2).ToString();
     }
 }
