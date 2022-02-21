@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerSpins : MonoBehaviour
 {
-    public float xAngle = 0, yAngle = 0, zAngle = 0, zRotate = 1;
+    public float xAngle = 0, yAngle = 0, zAngle = 0, zRotate = 0;
 
     private GameObject playerCube;
 
@@ -22,6 +22,6 @@ public class PlayerSpins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerCube.transform.Rotate(xAngle, yAngle, +zRotate, Space.Self);
+        //playerCube.transform.Rotate(xAngle, yAngle, +zRotate, Space.Self);
     }
 }

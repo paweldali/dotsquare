@@ -9,6 +9,7 @@ TagManager:
   - GreenGround
   - OrangeGround
   - PurpleGround
+  - GM
   layers:
   - Default
   - TransparentFX
