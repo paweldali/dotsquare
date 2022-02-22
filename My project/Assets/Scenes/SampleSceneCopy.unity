@@ -7923,7 +7923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07cf7b9450983344a349bc3743dd5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHardDiscoAlreadyStarted: 0
+  isHardDiscoAlreadyStarted: 1
   isRandomColorOnEachSceneReload: 1
 --- !u!1001 &7761685602806292252
 PrefabInstance:
