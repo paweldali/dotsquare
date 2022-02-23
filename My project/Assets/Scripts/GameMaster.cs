@@ -35,7 +35,7 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
        if(isLevelCompleted){
-           timer = GameObject.Find("Timer").GetComponent<Timer>();
+           timer = GameObject.Find("Timer").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
            levelTime = timer.getCurrentTime();
            Debug.Log("level completed with time:" + levelTime.ToString());
            
