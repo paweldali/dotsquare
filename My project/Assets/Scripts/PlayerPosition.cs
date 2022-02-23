@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     void Update()
     {   
        if(player.GetComponent<Rigidbody2D>().velocity.magnitude > 0){
-            Debug.Log("player is moving");
             CreateDust();
         }
     }

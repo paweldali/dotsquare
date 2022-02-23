@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameMaster : MonoBehaviour
@@ -13,7 +14,10 @@ public class GameMaster : MonoBehaviour
 
     public float levelTime;
 
+    public int levelNumber = 1;
+
     private Timer timer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +41,11 @@ public class GameMaster : MonoBehaviour
        if(isLevelCompleted){
            timer = GameObject.Find("Timer").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
            levelTime = timer.getCurrentTime();
-           Debug.Log("level completed with time:" + levelTime.ToString());
-           
+           Debug.Log("level" + levelNumber +  "completed with time:" + levelTime.ToString());
+
+           SceneManager.LoadScene("FinishedLevel");
+
            isLevelCompleted = false;
-           levelTime = -1.0f;
        }
     }
 }
