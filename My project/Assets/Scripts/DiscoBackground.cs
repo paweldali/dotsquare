@@ -25,6 +25,7 @@ public class DiscoBackground : MonoBehaviour
          );
     }
 
+
     void Update()
     {
         if(isHardDiscoAlreadyStarted) randomBackgroundColor();
