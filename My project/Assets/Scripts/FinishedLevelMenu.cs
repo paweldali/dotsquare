@@ -43,8 +43,11 @@ public class FinishedLevelMenu : MonoBehaviour
 
     public void PlayNextMap()
     {
-        finishedLevelNumber++;
-        gm.levelNumber++;
-        SceneManager.LoadScene("Level" + finishedLevelNumber);
+        if(gm.numberOfLevels > finishedLevelNumber) {
+            finishedLevelNumber++;
+            gm.levelNumber++;
+            SceneManager.LoadScene("Level" + finishedLevelNumber);
+        }
+        else Debug.Log("There is no more levels");
     }
 }
