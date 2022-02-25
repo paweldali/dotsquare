@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerResetPosition : MonoBehaviour
@@ -18,9 +19,7 @@ public class PlayerResetPosition : MonoBehaviour
     {
         if (Input.GetKey("r"))
         {
-            transform.position = startPosition;
-            print("Reset Position");
-
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
