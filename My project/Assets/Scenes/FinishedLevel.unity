@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07cf7b9450983344a349bc3743dd5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHardDiscoAlreadyStarted: 0
+  isHardDiscoAlreadyStarted: 1
   isRandomColorOnEachSceneReload: 1
 --- !u!212 &423318292
 SpriteRenderer:
@@ -864,8 +864,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -480, y: 641}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -655, y: 754}
+  m_SizeDelta: {x: 343.1293, y: 279.2913}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1021646614
 MonoBehaviour:
