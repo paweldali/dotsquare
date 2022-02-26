@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -27,5 +28,10 @@ public class PlayerLife : MonoBehaviour
     {
        anim.SetTrigger("Death"); 
        rb.bodyType = RigidbodyType2D.Static;
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
