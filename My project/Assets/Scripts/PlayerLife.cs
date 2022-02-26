@@ -9,11 +9,16 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private GameMaster gm;
 
+    private Timer timer;
+
     // Start is called before the first frame update
     private void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
-        transform.position = gm.lastCheckPointPos;
+
+        gm.startPos = transform.position;
+
+        Debug.Log("Start pos = " + gm.startPos);
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -56,6 +61,9 @@ public class PlayerLife : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
 
         anim.SetTrigger("Idle");
+
+        timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
+        timer.currentTime = 0f;
 
         
 

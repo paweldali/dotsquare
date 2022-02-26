@@ -12,6 +12,7 @@ public class FinishLine : MonoBehaviour
         if (finishLine.CompareTag("Player"))
         {
             gm.isLevelCompleted = true;
+            gm.lastCheckPointPos = gm.startPos;
         }
     }
 
