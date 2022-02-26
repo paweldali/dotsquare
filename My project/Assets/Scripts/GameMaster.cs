@@ -23,7 +23,7 @@ public class GameMaster : MonoBehaviour
     private Timer timer;
 
 
-    // Start is called before the first frame update
+    // Start is called before the first frame update, keeping one instance of gamemaster
     void Start()
     {
         if(instance == null)

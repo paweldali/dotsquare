@@ -64,9 +64,5 @@ public class PlayerLife : MonoBehaviour
 
         timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
         timer.currentTime = 0f;
-
-        
-
-        
     }
 }
