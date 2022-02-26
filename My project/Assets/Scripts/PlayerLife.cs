@@ -47,21 +47,19 @@ public class PlayerLife : MonoBehaviour
     }
 
     private void RevivePlayer(){
-        anim.ResetTrigger("Death"); 
-
-
-        
-        anim.SetTrigger("Alive");
+        anim.ResetTrigger("Death");
         transform.position =  gm.lastCheckPointPos;
+        anim.SetTrigger("Alive");
+   
 
         Debug.Log("Player is alive");
 
         anim.ResetTrigger("Alive");
 
-        rb.bodyType = RigidbodyType2D.Dynamic;
+
 
         anim.SetTrigger("Idle");
-
+        rb.bodyType = RigidbodyType2D.Dynamic;
         timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
         timer.currentTime = 0f;
     }
