@@ -11,6 +11,8 @@ public class PlayerLife : MonoBehaviour
 
     private Timer timer;
 
+    public bool checkpointed;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -22,9 +24,18 @@ public class PlayerLife : MonoBehaviour
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        checkpointed = false;
     }
 
     // Update is called once per frame
+    public void Update(){
+        if (Input.GetKey("r"))
+        {
+            checkpointed = false;
+            gm.lastCheckPointPos = gm.startPos;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("RedGround"))
@@ -60,7 +71,11 @@ public class PlayerLife : MonoBehaviour
 
         anim.SetTrigger("Idle");
         rb.bodyType = RigidbodyType2D.Dynamic;
-        timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
-        timer.currentTime = 0f;
+        if(!checkpointed)
+        {
+            timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
+            timer.currentTime = 0f;
+        }
+ 
     }
 }

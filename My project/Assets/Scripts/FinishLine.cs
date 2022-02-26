@@ -6,6 +6,7 @@ public class FinishLine : MonoBehaviour
 {
 
     private GameMaster gm;
+    private PlayerLife player;
 
     void OnTriggerEnter2D(Collider2D finishLine)
     {
@@ -13,6 +14,7 @@ public class FinishLine : MonoBehaviour
         {
             gm.isLevelCompleted = true;
             gm.lastCheckPointPos = gm.startPos;
+            player.checkpointed = false;
         }
     }
 
@@ -20,6 +22,7 @@ public class FinishLine : MonoBehaviour
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
     }
 
     // Update is called once per frame
