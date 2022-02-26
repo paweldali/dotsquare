@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class PlayerResetPosition : MonoBehaviour
+public class PlayerRestartLevel : MonoBehaviour
 {
     public Vector3 startPosition;
 

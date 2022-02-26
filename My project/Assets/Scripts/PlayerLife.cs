@@ -7,10 +7,14 @@ public class PlayerLife : MonoBehaviour
 {
     private Animator anim;
     private Rigidbody2D rb;
+    private GameMaster gm;
 
     // Start is called before the first frame update
     private void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+        transform.position = gm.lastCheckPointPos;
+
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -30,8 +34,31 @@ public class PlayerLife : MonoBehaviour
        rb.bodyType = RigidbodyType2D.Static;
     }
 
-    private void RestartLevel()
+    private void KillPlayer()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        anim.ResetTrigger("Idle"); 
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        RevivePlayer();
+    }
+
+    private void RevivePlayer(){
+        anim.ResetTrigger("Death"); 
+
+
+        
+        anim.SetTrigger("Alive");
+        transform.position =  gm.lastCheckPointPos;
+
+        Debug.Log("Player is alive");
+
+        anim.ResetTrigger("Alive");
+
+        rb.bodyType = RigidbodyType2D.Dynamic;
+
+        anim.SetTrigger("Idle");
+
+        
+
+        
     }
 }
