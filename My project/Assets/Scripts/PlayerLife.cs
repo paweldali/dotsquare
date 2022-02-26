@@ -42,6 +42,46 @@ public class PlayerLife : MonoBehaviour
         {
             Die();
         }
+        else if (collision.gameObject.CompareTag("Ground"))
+        {
+            Idle();
+        }
+        else if (collision.gameObject.CompareTag("GreenGround"))
+        {
+            GreenBooster();
+        }
+        else if (collision.gameObject.CompareTag("PurpleGround"))
+        {
+            PurpleWeaker();
+        }
+        else if (collision.gameObject.CompareTag("OrangeGround"))
+        {
+            OrangeJumper();
+        }
+    }
+
+    private void Idle(){
+        Debug.Log("idle");
+        anim.ResetTrigger("Green"); 
+        anim.SetTrigger("Idle"); 
+    }
+
+    private void PurpleWeaker(){
+        Debug.Log("purple animation");
+        anim.ResetTrigger("Idle"); 
+        anim.SetTrigger("Purple"); 
+    }
+
+    private void OrangeJumper(){
+        Debug.Log("oragne animation");
+        anim.ResetTrigger("Idle"); 
+        anim.SetTrigger("Orange"); 
+    }
+
+    private void GreenBooster(){
+        Debug.Log("green booster animation");
+        anim.ResetTrigger("Idle"); 
+        anim.SetTrigger("Green"); 
     }
 
     private void Die()
