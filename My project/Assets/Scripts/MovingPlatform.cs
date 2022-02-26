@@ -24,12 +24,12 @@ public class MovingPlatform : MonoBehaviour
         if (transform.position == pos1.position)
         {
             nextPos = pos2.position;
-            Debug.Log("pos1reached");
+           //  Debug.Log("pos1reached");
         }
         if(transform.position == pos2.position)
         {
             nextPos = pos1.position;
-            Debug.Log("pos2reached");
+           // Debug.Log("pos2reached");
         }
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
