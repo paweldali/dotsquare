@@ -10,6 +10,8 @@ public class GameMaster : MonoBehaviour
 
     public Vector2 lastCheckPointPos;
 
+    public Vector2 startPos;
+
     public bool isLevelCompleted = false; 
 
     public float levelTime;
