@@ -13,7 +13,7 @@ public class FinishLine : MonoBehaviour
         if (finishLine.CompareTag("Player"))
         {
             gm.isLevelCompleted = true;
-            gm.lastCheckPointPos = gm.startPos;
+            // gm.lastCheckPointPos = gm.startPos;
             player.checkpointed = false;
         }
     }

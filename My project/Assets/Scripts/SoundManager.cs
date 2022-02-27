@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
     public static void PlaySound(string clip){
         switch(clip){
             case "jump": 
-                audioSrc.volume = 0.35f;
+                audioSrc.volume = 0.15f;
                 audioSrc.PlayOneShot(playerJumpSound);
                 break;
             case "dead":
