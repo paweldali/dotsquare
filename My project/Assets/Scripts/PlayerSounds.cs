@@ -33,6 +33,10 @@ public class PlayerSounds : MonoBehaviour
         {
             SoundManager.PlaySound("win");
         }
+        else if (collider.CompareTag("Checkpoint"))
+        {
+            SoundManager.PlaySound("checkpoint");
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision){
