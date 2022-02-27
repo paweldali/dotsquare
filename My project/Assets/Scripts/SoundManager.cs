@@ -7,7 +7,8 @@ public class SoundManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public static AudioClip playerJumpSound, 
-                            dead1, dead2, dead3, dead4, dead5;
+                            dead1, dead2, dead3, dead4, dead5,
+                            win1, win2;
     static AudioSource audioSrc;
 
     void Start()
@@ -19,6 +20,9 @@ public class SoundManager : MonoBehaviour
         dead3 = Resources.Load<AudioClip>("Sounds/dead3");
         dead4 = Resources.Load<AudioClip>("Sounds/dead4");
         dead5 = Resources.Load<AudioClip>("Sounds/dead5");
+
+        win1 = Resources.Load<AudioClip>("Sounds/dead1");
+        win2 = Resources.Load<AudioClip>("Sounds/dead2");
 
         audioSrc = GetComponent<AudioSource>();
     }
@@ -54,6 +58,18 @@ public class SoundManager : MonoBehaviour
                         audioSrc.PlayOneShot(dead5);
                         break;
                                 
+                } 
+                break;
+            case "win":
+                randomClipNumber = Random.Range(0, 2); 
+                
+                switch(randomClipNumber){
+                    case 1: 
+                        audioSrc.PlayOneShot(win1);
+                        break;
+                    case 2:
+                        audioSrc.PlayOneShot(win2);
+                        break;   
                 } 
                 break;
             default:

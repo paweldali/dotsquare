@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerSounds : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    private bool grounded = false;
     void Start()
     {
         
@@ -12,6 +14,8 @@ public class PlayerSounds : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        grounded = true;
+
         if (collision.gameObject.CompareTag("RedGround"))
         {
             print("red tground sound playin");
@@ -19,13 +23,28 @@ public class PlayerSounds : MonoBehaviour
             
         }
 
+
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Finish"))
+        {
+            SoundManager.PlaySound("win");
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision){
+        grounded = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {   
+            
             print("space key was pressed");
             SoundManager.PlaySound("jump");
         }
