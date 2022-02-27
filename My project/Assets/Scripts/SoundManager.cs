@@ -5,12 +5,27 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    static SoundManager instance = null;
+
     // Start is called before the first frame update
     public static AudioClip playerJumpSound, 
                             dead1, dead2, dead3, dead4, dead5,
                             win1, win2, win3, win4, win5,
                             checkpoint1;
     static AudioSource audioSrc;
+
+    void Awake()
+     {
+         if (instance != null)
+         {
+             Destroy(gameObject);
+         }
+         else
+         {
+             instance = this;
+             GameObject.DontDestroyOnLoad(gameObject);
+         }
+     }
 
     void Start()
     {
