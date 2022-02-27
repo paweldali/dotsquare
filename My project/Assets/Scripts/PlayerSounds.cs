@@ -20,7 +20,6 @@ public class PlayerSounds : MonoBehaviour
         {
             print("red tground sound playin");
             SoundManager.PlaySound("dead");
-            
         }
 
 

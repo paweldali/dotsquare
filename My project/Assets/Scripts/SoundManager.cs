@@ -84,9 +84,12 @@ public class SoundManager : MonoBehaviour
                 break;
             case "win":
                 audioSrc.volume = 1.0f;
-                randomClipNumber = Random.Range(0, 2); 
+                int randomClipNumber2 = Random.Range(1, 2); 
+                // audioSrc.PlayOneShot(win1);
+                // audioSrc.PlayOneShot(win2);
+                Debug.Log("win");
                 
-                switch(randomClipNumber){
+                switch(randomClipNumber2){
                     case 1: 
                         audioSrc.PlayOneShot(win1);
                         break;
@@ -101,7 +104,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             default:
-                audioSrc.PlayOneShot(dead4); //haha
+                // audioSrc.PlayOneShot(dead4); //haha
                 break;
 
         }
