@@ -10,6 +10,17 @@ public class PlayerSounds : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("RedGround"))
+        {
+            print("red tground sound playin");
+            SoundManager.PlaySound("dead");
+            
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -19,4 +30,6 @@ public class PlayerSounds : MonoBehaviour
             SoundManager.PlaySound("jump");
         }
     }
+
+    
 }
