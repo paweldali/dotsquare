@@ -3,15 +3,15 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float MovementSpeed = 1;
-    public float JumpForce = 20;
+    public float JumpForce = 40;
 
-    private float _jumpTimeCounter;
-    public float JumpTime = 0.35f;
+    // private float _jumpTimeCounter;
+    // public float JumpTime = 0.35f;
     public float SpeedMultiplier = 2;
 
     public float SpeedDivider = 2;
 
-    public float TrampolineJumpBoost = 3;
+    public float TrampolineJumpBoost = 1.5f;
     private Rigidbody2D _rigidbody;
 
     private bool _isAlive = true;
@@ -65,25 +65,25 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.01f)
         {
             _isJumping = true;
-            _jumpTimeCounter = JumpTime;
+            // _jumpTimeCounter = JumpTime;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
 
+        //jump cut jak chcesz to sobie odkomentuj 
 
+        // if(Input.GetKey(KeyCode.Space) && _isJumping){
+        //     if(_jumpTimeCounter > 0){
+        //         _rigidbody.velocity = Vector2.up * JumpForce;
+        //         _jumpTimeCounter -= Time.deltaTime;
+        //     }
+        //     else{
+        //         _isJumping = false;
+        //     }
+        // }
 
-        if(Input.GetKey(KeyCode.Space) && _isJumping){
-            if(_jumpTimeCounter > 0){
-                _rigidbody.velocity = Vector2.up * JumpForce;
-                _jumpTimeCounter -= Time.deltaTime;
-            }
-            else{
-                _isJumping = false;
-            }
-        }
-
-        if(Input.GetKeyUp(KeyCode.Space)){
-            _isJumping = false;
-        }
+        // if(Input.GetKeyUp(KeyCode.Space)){
+        //     _isJumping = false;
+        // }
     }
 
 

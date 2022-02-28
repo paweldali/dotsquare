@@ -7894,7 +7894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7226877533386837740, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
       propertyPath: JumpForce
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7852138619494484698, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
       propertyPath: m_Color.a

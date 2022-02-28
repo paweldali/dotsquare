@@ -320,8 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovementSpeed: 20
-  JumpForce: 20
-  JumpTime: 0.35
+  JumpForce: 40
   SpeedMultiplier: 2
   SpeedDivider: 2
-  TrampolineJumpBoost: 2.8
+  TrampolineJumpBoost: 1.5
