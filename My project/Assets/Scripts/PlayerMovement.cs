@@ -3,17 +3,24 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float MovementSpeed = 1;
-    public float JumpForce = 1;
+    public float JumpForce = 20;
+
+    private float _jumpTimeCounter;
+    public float JumpTime = 0.35f;
     public float SpeedMultiplier = 2;
 
     public float SpeedDivider = 2;
 
-    public float TrampolineJumpBoost = 2;
+    public float TrampolineJumpBoost = 3;
     private Rigidbody2D _rigidbody;
 
     private bool _isAlive = true;
     private bool _isSpeedBoosted = false;
     private bool _isSpeedSlowed = false;
+
+    private bool _isJumping = false;
+
+
 
     // Start is called before the first frame update
     private void Start()
@@ -51,11 +58,33 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
 
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
+      
+
+        //jump
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.01f)
         {
+            _isJumping = true;
+            _jumpTimeCounter = JumpTime;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
+
+
+
+        if(Input.GetKey(KeyCode.Space) && _isJumping){
+            if(_jumpTimeCounter > 0){
+                _rigidbody.velocity = Vector2.up * JumpForce;
+                _jumpTimeCounter -= Time.deltaTime;
+            }
+            else{
+                _isJumping = false;
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space)){
+            _isJumping = false;
+        }
     }
+
 
     //detect collision with other objects
     void OnCollisionEnter2D(Collision2D collision)
