@@ -9,23 +9,26 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 66895af8877f7924c8ff7f1138ae769f
   - enabled: 0
-    path: Assets/Scenes/SampleScene 1.unity
-    guid: 96fbeed786e1a71478c9450acb8187e7
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/costam1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/costam2.unity
-    guid: d10506eeaa4ed044bb00166eca205830
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: e95c7f8ad0612bc4c9a772635580c919
   - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: e9b067a0cd11e014a8d71b2dd6ad35e1
+  - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 266b5225c2ab1c8468f335adc9b6acc9
   - enabled: 1
-    path: Assets/Scenes/Level2.unity
-    guid: e9b067a0cd11e014a8d71b2dd6ad35e1
+    path: Assets/Scenes/Level4.unity
+    guid: b04bbb27a751d6841afc1f4593e2d9ad
   - enabled: 1
     path: Assets/Scenes/FinishedLevel.unity
     guid: 4c83b2dbb992d76468433ca37b69ca12
