@@ -87,8 +87,9 @@ public class PlayerLife : MonoBehaviour
 
     private void Die()
     {
-       anim.SetTrigger("Death"); 
        rb.bodyType = RigidbodyType2D.Static;
+       anim.SetTrigger("Death"); 
+
     }
 
     private void KillPlayer()
