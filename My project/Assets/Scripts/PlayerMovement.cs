@@ -38,24 +38,25 @@ public class PlayerMovement : MonoBehaviour
 
             if (_isSpeedBoosted)
             {
-                transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed * SpeedMultiplier;
+                _rigidbody.velocity = new Vector2(movement * MovementSpeed * SpeedMultiplier, _rigidbody.velocity.y);
+
             }
             else if (_isSpeedSlowed)
             {
-                transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed / SpeedDivider;
+                _rigidbody.velocity = new Vector2(movement * MovementSpeed / SpeedDivider, _rigidbody.velocity.y);
             }
             else
             {
-                transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+                _rigidbody.velocity = new Vector2(movement * MovementSpeed, _rigidbody.velocity.y);
             }
 
-
+        //XD
 
 
         }
 
-        if (Mathf.Approximately(0, movement))
-            transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
+        // if (Mathf.Approximately(0, movement))
+        //     _rigidbody.transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
 
       
