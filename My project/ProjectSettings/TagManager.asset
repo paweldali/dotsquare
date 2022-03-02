@@ -11,6 +11,7 @@ TagManager:
   - PurpleGround
   - GM
   - Checkpoint
+  - Marshmallow
   layers:
   - Default
   - TransparentFX

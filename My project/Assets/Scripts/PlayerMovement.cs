@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool _isJumping = false;
 
-
+    private float _timeToJumpEnterCollision = 0.5f; //works as time to jump after leaving collision 
 
     // Start is called before the first frame update
     private void Start()
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed, _rigidbody.velocity.y);
             }
 
-        //XD
+            //XD
 
 
         }
@@ -58,15 +58,19 @@ public class PlayerMovement : MonoBehaviour
         // if (Mathf.Approximately(0, movement))
         //     _rigidbody.transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
 
+        if(_timeToJumpEnterCollision > 0){
+            _timeToJumpEnterCollision -= Time.deltaTime;
+        }
 
-      
 
         //jump
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.01f)
+        if ((Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.01f) || (Input.GetButtonDown("Jump") && _timeToJumpEnterCollision > 0))
         {
+            _timeToJumpEnterCollision = 0;
             _isJumping = true;
             // _jumpTimeCounter = JumpTime;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            Debug.Log("jumper");
         }
 
         //jump cut jak chcesz to sobie odkomentuj 
@@ -90,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
     //detect collision with other objects
     void OnCollisionEnter2D(Collision2D collision)
     {
+        _timeToJumpEnterCollision = 0.5f;
 
         if (collision.gameObject.CompareTag("RedGround")) //ded
         {
@@ -106,6 +111,8 @@ public class PlayerMovement : MonoBehaviour
             _isAlive = true;
             _isSpeedBoosted = false;
             _isSpeedSlowed = false;
+
+            Debug.Log("entered ground");
         }
         else if (collision.gameObject.CompareTag("GreenGround")) //speed booster
         {
@@ -115,8 +122,10 @@ public class PlayerMovement : MonoBehaviour
 
             Debug.Log("GreenGround");
         }
-        else if (collision.gameObject.CompareTag("OrangeGround"))
-        { //trampoline
+        else if (collision.gameObject.CompareTag("OrangeGround")) //trampoline
+        { 
+            _timeToJumpEnterCollision = 0f;
+
             _isAlive = true;
             _isSpeedBoosted = false;
             _isSpeedSlowed = false;
@@ -129,6 +138,27 @@ public class PlayerMovement : MonoBehaviour
             _isAlive = true;
             _isSpeedBoosted = false;
             _isSpeedSlowed = true;
+        }
+        else if (collision.gameObject.CompareTag("Marshmallow"))
+        {
+            Debug.Log("entered Marshmallow");
+        }
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        
+
+        if (collision.gameObject.CompareTag("Marshmallow"))
+        {
+            Debug.Log("exited Marshmallow");
+        }
+        else if (collision.gameObject.CompareTag("Ground")) //normal
+        {
+            _isAlive = true;
+            _isSpeedBoosted = false;
+            _isSpeedSlowed = false;
+
+            Debug.Log("exited ground");
         }
     }
 
