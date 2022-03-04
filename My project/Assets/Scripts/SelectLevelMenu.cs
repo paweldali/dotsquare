@@ -13,6 +13,11 @@ public class SelectLevelMenu : MonoBehaviour
 
     private float[] bestTimes;
 
+    private GameObject levelDescriptionPanel;
+
+    public TextMeshProUGUI levelNameTMP;
+    public TextMeshProUGUI levelTimeTMP;
+    
     
     void Start()
     {
@@ -21,6 +26,10 @@ public class SelectLevelMenu : MonoBehaviour
 
         //best times info from SaveManager
         bestTimes = SaveManager.instance.bestTimes;
+
+
+        levelDescriptionPanel = GameObject.Find("LevelPopUp");
+        
 
         SetBestLevelTimes();
     }
@@ -31,9 +40,20 @@ public class SelectLevelMenu : MonoBehaviour
         
     // }
 
+
     public void SelectLevel(int levelNumber){
-        gm.levelNumber = levelNumber;
-        SceneManager.LoadScene("Level" + levelNumber);
+        levelDescriptionPanel.SetActive(true);
+        levelNameTMP.text = "LEVEL " + levelNumber;
+
+        if(bestTimes[levelNumber-1] != null)
+            levelTimeTMP.text = System.Math.Round(bestTimes[levelNumber-1], 2).ToString();
+        else
+            levelTimeTMP.text = "NONE";
+
+
+
+        // gm.levelNumber = levelNumber;
+        // SceneManager.LoadScene("Level" + levelNumber);
     }
 
     public void SelectLevel(){
