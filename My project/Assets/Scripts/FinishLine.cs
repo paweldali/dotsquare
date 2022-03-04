@@ -25,9 +25,5 @@ public class FinishLine : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

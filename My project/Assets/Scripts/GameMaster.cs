@@ -43,13 +43,20 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
        if(isLevelCompleted){
-           timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
-           levelTime = timer.getCurrentTime();
-           Debug.Log("level" + levelNumber +  "completed with time:" + levelTime.ToString());
+            timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
+            levelTime = timer.getCurrentTime();
+            Debug.Log("level" + levelNumber +  "completed with time:" + levelTime.ToString());
 
-           SceneManager.LoadScene("FinishedLevel");
+            //save time
 
-           isLevelCompleted = false;
+            SaveManager.instance.bestTimes[levelNumber - 1] = levelTime;
+            SaveManager.instance.Save();
+            Debug.Log(levelNumber + " level time saved to file " + SaveManager.instance.bestTimes[levelNumber - 1]);
+
+
+            SceneManager.LoadScene("FinishedLevel");
+
+            isLevelCompleted = false;
        }
     }
 }
