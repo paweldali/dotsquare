@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    public Joystick Joystick;
     public float MovementSpeed = 1;
     public float JumpForce = 40;
 
@@ -19,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isSpeedSlowed = false;
 
 
+
     private float _timeToJumpEnterCollision = 0.5f; //works as time to jump after leaving collision 
 
     // Start is called before the first frame update
@@ -34,24 +37,32 @@ public class PlayerMovement : MonoBehaviour
         var movement = Input.GetAxis("Horizontal");
         if (_isAlive)
         {
-
+            //KEYBOARD
             if (_isSpeedBoosted)
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed * SpeedMultiplier, _rigidbody.velocity.y);
-
+                _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed * SpeedMultiplier, _rigidbody.velocity.y);
             }
             else if (_isSpeedSlowed)
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed / SpeedDivider, _rigidbody.velocity.y);
+                _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed / SpeedDivider,  _rigidbody.velocity.y);
             }
             else
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed, _rigidbody.velocity.y);
+                _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed, _rigidbody.velocity.y);
             }
 
-            //XD
-
-
+            //JOYSTICK
+            // if(Joystick.joystickVec.y != 0)
+            // {
+            //     _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed, Joystick.joystickVec.y * MovementSpeed);
+            // }
+            // else
+            // {
+            //     _rigidbody.velocity = Vector2.zero;
+            // }
         }
 
         // if (Mathf.Approximately(0, movement))
@@ -66,7 +77,6 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.01f) || (Input.GetButtonDown("Jump") && _timeToJumpEnterCollision > 0))
         {
             _timeToJumpEnterCollision = 0;
-            // _jumpTimeCounter = JumpTime;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             Debug.Log("jumper");
         }
@@ -86,6 +96,15 @@ public class PlayerMovement : MonoBehaviour
         // if(Input.GetKeyUp(KeyCode.Space)){
         //     _isJumping = false;
         // }
+    }
+
+    public void JumpButton(){
+        if ((Mathf.Abs(_rigidbody.velocity.y) < 0.01f) ||  (_timeToJumpEnterCollision > 0)){
+            _timeToJumpEnterCollision = 0;
+            _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+            Debug.Log("jumper");
+        }
+        Debug.Log("jumper2");
     }
 
 
