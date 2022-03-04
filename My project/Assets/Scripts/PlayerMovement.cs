@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     private bool _isSpeedBoosted = false;
     private bool _isSpeedSlowed = false;
 
-    private bool _isJumping = false;
 
     private float _timeToJumpEnterCollision = 0.5f; //works as time to jump after leaving collision 
 
@@ -67,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.01f) || (Input.GetButtonDown("Jump") && _timeToJumpEnterCollision > 0))
         {
             _timeToJumpEnterCollision = 0;
-            _isJumping = true;
             // _jumpTimeCounter = JumpTime;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             Debug.Log("jumper");

@@ -23,51 +23,31 @@ public class SelectLevelMenu : MonoBehaviour
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
 
-
         //best times info from SaveManager
-        bestTimes = SaveManager.instance.bestTimes;
-
-
-        levelDescriptionPanel = GameObject.Find("LevelPopUp");
-        
-
-        SetBestLevelTimes();
+        LoadSave();
     }
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    public void LoadSave(){
+        bestTimes = SaveManager.instance.bestTimes;
+    }
 
 
+    private int levelNumberPlayerChecks;
     public void SelectLevel(int levelNumber){
-        levelDescriptionPanel.SetActive(true);
+        // levelDescriptionPanel.SetActive(true);
         levelNameTMP.text = "LEVEL " + levelNumber;
 
-        if(bestTimes[levelNumber-1] != null)
+        if(bestTimes[levelNumber-1] != 0f) //if value of level time is not empty
             levelTimeTMP.text = System.Math.Round(bestTimes[levelNumber-1], 2).ToString();
         else
             levelTimeTMP.text = "NONE";
 
-
-
-        // gm.levelNumber = levelNumber;
-        // SceneManager.LoadScene("Level" + levelNumber);
+        levelNumberPlayerChecks = levelNumber;
     }
 
-    public void SelectLevel(){
-        Debug.Log("SelectLevel");
+    public void PlayLevel(){
+        gm.levelNumber = levelNumberPlayerChecks;
+        SceneManager.LoadScene("Level" + levelNumberPlayerChecks);
     }
 
-
-    //set best level times to TMPs in SelectLevelMenu
-    private void SetBestLevelTimes(){
-        // TextMeshProUGUI textField = (TextMeshProUGUI)GetComponents(typeof(Button))[1].GetComponents(typeof(TextMeshProUGUI))[1];
-        // TextMeshProUGUI textField = (TextMeshProUGUI)GetComponent("Level1Button").GetComponents(typeof(TextMeshProUGUI))[1];
-
-        // textField.text = "best time: " + bestTimes[0];
-
-        Debug.Log("best time: " + bestTimes[0]);
-    }
 }
