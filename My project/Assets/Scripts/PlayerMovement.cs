@@ -1,11 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
+using EasyJoystick;
 
 
 public class PlayerMovement : MonoBehaviour
 {
 
     // public Joystick Joystick;
+
+    [SerializeField] private Joystick2 _joystick;
+
+
     public float MovementSpeed = 1;
     public float JumpForce = 40;
 
@@ -40,19 +45,20 @@ public class PlayerMovement : MonoBehaviour
     {
         //KEYBOARD
         // movement = Input.GetAxis("Horizontal");
+        var movement = _joystick.Horizontal();
 
 
 
         //BUTTONS
-        if(_rightMove){
-            if(movement < 1f)
-            movement += 0.04f;
-        } 
-        else if(_leftMove){
-            if(movement > -1f)
-            movement -= 0.04f;
-        }
-        else movement = 0;
+        // if(_rightMove){
+        //     if(movement < 1f)
+        //     movement += 0.04f;
+        // } 
+        // else if(_leftMove){
+        //     if(movement > -1f)
+        //     movement -= 0.04f;
+        // }
+        // else movement = 0;
 
         Debug.Log("Movement: " + movement);
         if (_isAlive)
@@ -84,6 +90,12 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+
+        // var movementX = Input.GetAxis("Horizontal");
+
+
+        // transform.position += new Vector3(movementX, _rigidbody.velocity.y, 0) * MovementSpeed * Time.deltaTime;
+
 
         // if (Mathf.Approximately(0, movement))
         //     _rigidbody.transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
