@@ -41,28 +41,28 @@ public class PlayerMovement : MonoBehaviour
             if (_isSpeedBoosted)
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed * SpeedMultiplier, _rigidbody.velocity.y);
+
+
+                if(Joystick.joystickVec.x != 0)
                 _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed * SpeedMultiplier, _rigidbody.velocity.y);
             }
             else if (_isSpeedSlowed)
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed / SpeedDivider, _rigidbody.velocity.y);
+
+
+                if(Joystick.joystickVec.x != 0)
                 _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed / SpeedDivider,  _rigidbody.velocity.y);
             }
             else
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed, _rigidbody.velocity.y);
+
+
+                if(Joystick.joystickVec.x != 0)
                 _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed, _rigidbody.velocity.y);
             }
 
-            //JOYSTICK
-            // if(Joystick.joystickVec.y != 0)
-            // {
-            //     _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed, Joystick.joystickVec.y * MovementSpeed);
-            // }
-            // else
-            // {
-            //     _rigidbody.velocity = Vector2.zero;
-            // }
         }
 
         // if (Mathf.Approximately(0, movement))
