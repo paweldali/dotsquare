@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerRestartLevel : MonoBehaviour
 {
     public Vector3 startPosition;
-
+    
     private PlayerLife player;
 
 
@@ -23,8 +23,12 @@ public class PlayerRestartLevel : MonoBehaviour
     {
         if (Input.GetKey("r"))
         {
+            RestartLevel();
+        }
+    }
+    public void RestartLevel()
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             player.checkpointed = false;
         }
-    }
 }
