@@ -101,7 +101,12 @@ public class PlayerLife : MonoBehaviour
 
     private void RevivePlayer(){
         anim.ResetTrigger("Death");
-        transform.position =  gm.lastCheckPointPos;
+
+        if(checkpointed)
+            transform.position =  gm.lastCheckPointPos;
+        else
+            transform.position = gm.startPos;
+
         anim.SetTrigger("Alive");
    
 
