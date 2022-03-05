@@ -34,7 +34,6 @@ public class SelectLevelMenu : MonoBehaviour
 
     private int levelNumberPlayerChecks;
     public void SelectLevel(int levelNumber){
-        // levelDescriptionPanel.SetActive(true);
         levelNameTMP.text = "LEVEL " + levelNumber;
 
         if(bestTimes[levelNumber-1] != 0f) //if value of level time is not empty
