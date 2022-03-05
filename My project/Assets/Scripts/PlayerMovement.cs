@@ -44,8 +44,14 @@ public class PlayerMovement : MonoBehaviour
 
 
         //BUTTONS
-        if(_rightMove) movement = 1;
-        else if(_leftMove) movement = -1;
+        if(_rightMove){
+            if(movement < 1f)
+            movement += 0.04f;
+        } 
+        else if(_leftMove){
+            if(movement > -1f)
+            movement -= 0.04f;
+        }
         else movement = 0;
 
         Debug.Log("Movement: " + movement);
