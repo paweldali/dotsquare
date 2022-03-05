@@ -85,7 +85,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 161
+  controlID: 20870
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 162
+  controlID: 20871
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,21 +248,21 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 64}
-      m_SelectedIDs: 2c9c0000
-      m_LastClickedID: 39980
+      scrollPos: {x: 0, y: 240}
+      m_SelectedIDs: d2270000
+      m_LastClickedID: 0
       m_ExpandedIDs: fe1cfdffe026fdffd0f8ffffeaf9ffff966c0000146d0000509b0000249c00002c9c0000689c0000129d0000bc9d0000669e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: parallax-space-BG5
-        m_OriginalName: parallax-space-BG5
+        m_Name: parallax-space-big-planet1 (1)
+        m_OriginalName: parallax-space-big-planet1 (1)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 40040
+        m_UserData: 40310
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
     - e00: 0.2758239
       e01: 0
       e02: 0
-      e03: -112.36251
+      e03: -123.39546
       e10: 0
       e11: 0.2758239
       e12: 0
@@ -639,9 +639,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -22.251127, y: 2.8481536, z: 0}
+    m_Target: {x: 28.550722, y: 9.522318, z: -0.5589913}
     speed: 2
-    m_Value: {x: -22.251127, y: 2.8481538, z: 0.000000024763805}
+    m_Value: {x: 28.550722, y: 9.522318, z: -0.5589913}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -692,9 +692,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 60.592007
+    m_Target: 56.25347
     speed: 2
-    m_Value: 60.592007
+    m_Value: 56.25347
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -817,21 +817,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\GIT\aniewiem2\My project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 151}
-    m_SelectedIDs: be750000
-    m_LastClickedID: 30142
+    m_SelectedIDs: 90750000
+    m_LastClickedID: 30096
     m_ExpandedIDs: 000000008e75000090750000c47500006e760000d2780000e879000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -860,7 +860,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008e75000090750000
+    m_ExpandedIDs: 000000008e75000090750000c47500006e760000d2780000e879000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -885,24 +885,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2c9c0000
-    m_LastClickedInstanceID: 39980
+    m_SelectedInstanceIDs: d2270000
+    m_LastClickedInstanceID: 10194
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000405e0000966d0000fa810000da75000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Scripts
-      m_OriginalName: Scripts
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 30096
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_CreateAssetUtility:
@@ -1007,7 +1007,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -145460
+  m_LastSelectedObjectID: 39980
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 211
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //KEYBOARD
-        // movement = Input.GetAxis("Horizontal");
-        var movement = _joystick.Horizontal();
+        movement = Input.GetAxis("Horizontal");
+        // var movement = _joystick.Horizontal();
 
 
 
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         // }
         // else movement = 0;
 
-        Debug.Log("Movement: " + movement);
+        // Debug.Log("Movement: " + movement);
         if (_isAlive)
         {
             //KEYBOARD
