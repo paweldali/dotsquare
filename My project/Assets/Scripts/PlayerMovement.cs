@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
         var movement = Input.GetAxis("Horizontal");
         if (_isAlive)
         {
