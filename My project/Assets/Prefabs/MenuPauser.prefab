@@ -53,6 +53,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7975135026328641272}
     m_Modifications:
+    - target: {fileID: 7262280338153863313, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338153863313, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338153863313, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338548437582, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338548437582, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338548437582, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -164
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338610534161, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338610534161, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7262280338610534161, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 181
+      objectReference: {fileID: 0}
     - target: {fileID: 7262280340076609032, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
