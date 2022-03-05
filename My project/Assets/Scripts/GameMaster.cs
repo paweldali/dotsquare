@@ -49,10 +49,12 @@ public class GameMaster : MonoBehaviour
 
             //save time
 
-            SaveManager.instance.bestTimes[levelNumber - 1] = levelTime;
-            SaveManager.instance.Save();
-            Debug.Log(levelNumber + " level time saved to file " + SaveManager.instance.bestTimes[levelNumber - 1]);
+            if((levelTime < SaveManager.instance.bestTimes[levelNumber - 1]) || SaveManager.instance.bestTimes[levelNumber - 1] == 0f){
+                SaveManager.instance.bestTimes[levelNumber - 1] = levelTime;
+                SaveManager.instance.Save();
+                Debug.Log(levelNumber + " level, new best time saved to file " + SaveManager.instance.bestTimes[levelNumber - 1]);
 
+            }
 
             SceneManager.LoadScene("FinishedLevel");
 
