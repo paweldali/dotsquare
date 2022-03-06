@@ -44,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //KEYBOARD
-        movement = Input.GetAxis("Horizontal");
-        // var movement = _joystick.Horizontal();
+        // movement = Input.GetAxis("Horizontal");
+        var movement = _joystick.Horizontal();
 
 
 
