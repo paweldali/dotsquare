@@ -411,6 +411,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7018177913451523352}
     m_Modifications:
+    - target: {fileID: 8824231791371340872, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1768
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791371340872, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1768
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791371340872, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1768
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791371340872, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791371340874, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_fontSize
+      value: 39.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791371340874, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e43931709cb1d0042a95548e8059143f, type: 2}
+    - target: {fileID: 8824231791371340874, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791371340874, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5236036251715545582, guid: e43931709cb1d0042a95548e8059143f, type: 2}
+    - target: {fileID: 8824231791371340874, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791371340874, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3036676095
+      objectReference: {fileID: 0}
     - target: {fileID: 8824231791912367921, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
       propertyPath: target
       value: 
