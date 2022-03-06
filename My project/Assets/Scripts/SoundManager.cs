@@ -8,24 +8,24 @@ public class SoundManager : MonoBehaviour
     static SoundManager instance = null;
 
     // Start is called before the first frame update
-    public static AudioClip playerJumpSound, 
+    public static AudioClip playerJumpSound,
                             dead1, dead2, dead3, dead4, dead5,
                             win1, win2, win3, win4, win5,
                             checkpoint1;
     static AudioSource audioSrc;
 
     void Awake()
-     {
-         if (instance != null)
-         {
-             Destroy(gameObject);
-         }
-         else
-         {
-             instance = this;
-             GameObject.DontDestroyOnLoad(gameObject);
-         }
-     }
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            GameObject.DontDestroyOnLoad(gameObject);
+        }
+    }
 
     void Start()
     {
@@ -37,8 +37,8 @@ public class SoundManager : MonoBehaviour
         dead4 = Resources.Load<AudioClip>("Sounds/dead4");
         dead5 = Resources.Load<AudioClip>("Sounds/dead5");
 
-        win1 = Resources.Load<AudioClip>("Sounds/dead1");
-        win2 = Resources.Load<AudioClip>("Sounds/dead2");
+        win1 = Resources.Load<AudioClip>("Sounds/win1");
+        win2 = Resources.Load<AudioClip>("Sounds/win2");
 
         checkpoint1 = Resources.Load<AudioClip>("Sounds/checkpoint1");
 
@@ -48,23 +48,25 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
-    
 
-    public static void PlaySound(string clip){
-        switch(clip){
-            case "jump": 
+
+    public static void PlaySound(string clip)
+    {
+        switch (clip)
+        {
+            case "jump":
                 audioSrc.volume = 0.15f;
                 audioSrc.PlayOneShot(playerJumpSound);
                 break;
             case "dead":
                 audioSrc.volume = 1.0f;
-                int randomClipNumber = Random.Range(0, 5); 
-                
-                switch(randomClipNumber){
-                    case 1: 
+                int randomClipNumber = Random.Range(0, 5 + 1);
+
+                switch (randomClipNumber)
+                {
+                    case 1:
                         audioSrc.PlayOneShot(dead1);
                         break;
                     case 2:
@@ -79,24 +81,28 @@ public class SoundManager : MonoBehaviour
                     case 5:
                         audioSrc.PlayOneShot(dead5);
                         break;
-                                
-                } 
+
+                }
                 break;
             case "win":
                 audioSrc.volume = 1.0f;
-                int randomClipNumber2 = Random.Range(1, 2); 
+
+                int randomClipNumber2 = Random.Range(1, 2 + 1);
+
+                Debug.Log("win audio playin " + randomClipNumber2);
                 // audioSrc.PlayOneShot(win1);
                 // audioSrc.PlayOneShot(win2);
                 Debug.Log("win");
-                
-                switch(randomClipNumber2){
-                    case 1: 
+
+                switch (randomClipNumber2)
+                {
+                    case 1:
                         audioSrc.PlayOneShot(win1);
                         break;
                     case 2:
                         audioSrc.PlayOneShot(win2);
-                        break;   
-                } 
+                        break;
+                }
                 break;
             case "checkpoint":
                 audioSrc.volume = 0.25f;
