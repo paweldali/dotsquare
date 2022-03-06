@@ -49,6 +49,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9050294304770202456, guid: f1d0f1443d714e84caaf0bed67260dc6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9050294304770202462, guid: f1d0f1443d714e84caaf0bed67260dc6, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -211,6 +215,10 @@ PrefabInstance:
     - target: {fileID: 2830744546403417322, guid: 6c0fbabe22a8e4d49b2105583ace4863, type: 3}
       propertyPath: m_Name
       value: SaveManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2830744546403417322, guid: 6c0fbabe22a8e4d49b2105583ace4863, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6657847684555547295, guid: 6c0fbabe22a8e4d49b2105583ace4863, type: 3}
       propertyPath: m_RootOrder
@@ -693,6 +701,10 @@ PrefabInstance:
     - target: {fileID: 1289499020216470853, guid: c10b143efd78f8446b832593e0388255, type: 3}
       propertyPath: m_Name
       value: GameMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 1289499020216470853, guid: c10b143efd78f8446b832593e0388255, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10b143efd78f8446b832593e0388255, type: 3}
