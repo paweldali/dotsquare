@@ -38,73 +38,41 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
 
     }
-
-    float movement = 0;
     // Update is called once per frame
+    
     private void Update()
-    {
-        //KEYBOARD
-        // movement = Input.GetAxis("Horizontal");
-        var movement = _joystick.Horizontal();
+    {   
+        // JOYSTICK
+        var movement = 0f;
 
+        if(_joystick.Horizontal()!= 0f){ //JOYSTICK
+            movement = _joystick.Horizontal();
+        }
+        else if (Input.GetAxis("Horizontal") != 0f){ //KEYBOARD
+            movement = Input.GetAxis("Horizontal");
+        }
 
-
-        //BUTTONS
-        // if(_rightMove){
-        //     if(movement < 1f)
-        //     movement += 0.04f;
-        // } 
-        // else if(_leftMove){
-        //     if(movement > -1f)
-        //     movement -= 0.04f;
-        // }
-        // else movement = 0;
-
-        // Debug.Log("Movement: " + movement);
         if (_isAlive)
         {
             //KEYBOARD
             if (_isSpeedBoosted)
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed * SpeedMultiplier, _rigidbody.velocity.y);
-
-
-                // if(Joystick.joystickVec.x != 0)
-                // _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed * SpeedMultiplier, _rigidbody.velocity.y);
             }
             else if (_isSpeedSlowed)
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed / SpeedDivider, _rigidbody.velocity.y);
-
-
-                // if(Joystick.joystickVec.x != 0)
-                // _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed / SpeedDivider,  _rigidbody.velocity.y);
             }
             else
             {
                 _rigidbody.velocity = new Vector2(movement * MovementSpeed, _rigidbody.velocity.y);
-
-
-                // if(Joystick.joystickVec.x != 0)
-                // _rigidbody.velocity = new Vector2(Joystick.joystickVec.x * MovementSpeed, _rigidbody.velocity.y);
             }
 
         }
 
-        // var movementX = Input.GetAxis("Horizontal");
-
-
-        // transform.position += new Vector3(movementX, _rigidbody.velocity.y, 0) * MovementSpeed * Time.deltaTime;
-
-
-        // if (Mathf.Approximately(0, movement))
-        //     _rigidbody.transform.rotation = movement > 0 ? Quaternion.Euler(0, 180, 0) : Quaternion.identity;
-
-
         if(_timeToJumpEnterCollision > 0){
             _timeToJumpEnterCollision -= Time.deltaTime;
         }
-
 
         //jump
         if ((Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.01f) || (Input.GetButtonDown("Jump") && _timeToJumpEnterCollision > 0))
@@ -113,22 +81,6 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             Debug.Log("jumper");
         }
-
-        //jump cut jak chcesz to sobie odkomentuj 
-
-        // if(Input.GetKey(KeyCode.Space) && _isJumping){
-        //     if(_jumpTimeCounter > 0){
-        //         _rigidbody.velocity = Vector2.up * JumpForce;
-        //         _jumpTimeCounter -= Time.deltaTime;
-        //     }
-        //     else{
-        //         _isJumping = false;
-        //     }
-        // }
-
-        // if(Input.GetKeyUp(KeyCode.Space)){
-        //     _isJumping = false;
-        // }
     }
 
     public void MoveLeftButton(){
@@ -168,10 +120,6 @@ public class PlayerMovement : MonoBehaviour
             _isAlive = false;
             _isSpeedBoosted = false;
             _isSpeedSlowed = false;
-
-            // _rigidbody.velocity = Vector3.zero;
-            // _rigidbody.angularVelocity = 0f;
-
         }
         else if (collision.gameObject.CompareTag("Ground")) //normal
         {
