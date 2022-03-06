@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
+using TMPro;
 
 
+// [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
     static SoundManager instance = null;
+
+    public TextMeshProUGUI TitleDisplayerTMP;
+    public TextMeshProUGUI TimeDisplayerTMP;
 
     // Start is called before the first frame update
     public static AudioClip playerJumpSound,
                             dead1, dead2, dead3, dead4, dead5,
                             win1, win2, win3, win4, win5,
                             checkpoint1;
+
+    public AudioClip[] musicClips;
     static AudioSource audioSrc;
+    private int _currentTrack;
 
     void Awake()
     {
@@ -43,7 +53,102 @@ public class SoundManager : MonoBehaviour
         checkpoint1 = Resources.Load<AudioClip>("Sounds/checkpoint1");
 
         audioSrc = GetComponent<AudioSource>();
+
+        PlayMusic();
     }
+
+    public void PlayMusic()
+    {
+        if (audioSrc.isPlaying)
+        {
+            return;
+        }
+
+        _currentTrack--;
+        if (_currentTrack < 0)
+        {
+            _currentTrack = musicClips.Length - 1;
+        }
+
+        StartCoroutine("WaitForMusicEnd");
+    }
+
+    IEnumerator WaitForMusicEnd()
+    {
+        while (audioSrc.isPlaying)
+        {
+            _playTime = (int) audioSrc.time;
+            ShowPlayTime();
+            yield return null;
+        }
+        NextTitle();
+    }
+
+    public void NextTitle()
+    {
+        audioSrc.Stop();
+        _currentTrack++;
+
+        if (_currentTrack > musicClips.Length - 1)
+        {
+            _currentTrack = 0;
+        }
+
+        audioSrc.clip = musicClips[_currentTrack];
+        audioSrc.Play();
+        ShowCurrentTitle();
+
+
+        //show title
+
+        StartCoroutine("WaitForMusicEnd");
+    }
+
+    public void PreviousTitle()
+    {
+        audioSrc.Stop();
+        _currentTrack--;
+
+        if (_currentTrack < 0)
+        {
+            _currentTrack = musicClips.Length - 1;
+        }
+
+        audioSrc.clip = musicClips[_currentTrack];
+        audioSrc.Play();
+        ShowCurrentTitle();
+
+        //show title
+
+        StartCoroutine("WaitForMusicEnd");
+    }
+
+    public void StopMusic(){
+        StopCoroutine("WaitForMusicEnd");
+        audioSrc.Stop();
+    }
+
+    public void MuteMusic(){
+        audioSrc.mute = !audioSrc.mute;
+    }
+
+
+    private int _fullTrackLength;
+    private int _playTime;
+    private int _seconds;
+    private int _minutes;
+
+    void ShowCurrentTitle(){
+        TitleDisplayerTMP.text = audioSrc.clip.name;
+        _fullTrackLength = (int) audioSrc.clip.length;
+    }
+
+    void ShowPlayTime(){
+        _seconds = _playTime % 60;
+        _minutes = (_playTime / 60) % 60;
+        TimeDisplayerTMP.text = _minutes + ":" + _seconds.ToString("D2") + "/" + ((_fullTrackLength/60) % 60) + ":" + (_fullTrackLength%60).ToString("D2");
+    }
+    
 
     // Update is called once per frame
     void Update()
