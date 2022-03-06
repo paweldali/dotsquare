@@ -30,6 +30,7 @@ public class PlayerSounds : MonoBehaviour
     {
         if (collider.CompareTag("Finish"))
         {
+            Debug.Log("finish sound play");
             SoundManager.PlaySound("win");
         }
         else if (collider.CompareTag("Checkpoint"))
