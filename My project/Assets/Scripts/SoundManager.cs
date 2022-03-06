@@ -150,6 +150,11 @@ public class SoundManager : MonoBehaviour
     }
     
 
+    //slider
+    void SetVolume(float sliderValue){
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
