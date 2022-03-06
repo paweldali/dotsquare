@@ -56,9 +56,8 @@ public class GameMaster : MonoBehaviour
 
             }
 
-            SceneManager.LoadScene("FinishedLevel");
-
             isLevelCompleted = false;
+            SceneManager.LoadScene("FinishedLevel");  
        }
     }
 }
