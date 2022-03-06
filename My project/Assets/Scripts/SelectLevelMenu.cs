@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using System;
+using System.Data;
+
 
 public class SelectLevelMenu : MonoBehaviour
 {
@@ -13,40 +16,88 @@ public class SelectLevelMenu : MonoBehaviour
 
     private float[] bestTimes;
 
-    private GameObject levelDescriptionPanel;
+    public GameObject levelDescriptionPanel;
 
     public TextMeshProUGUI levelNameTMP;
     public TextMeshProUGUI levelTimeTMP;
-    
-    
+    public TextMeshProUGUI CalculatorDisplayTMP;
+
+    private List<string> scenesNames = new List<string>();
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
 
         //best times info from SaveManager
         LoadSave();
+
+
+
+        for (int i = 1; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+            int lastSlash = scenePath.LastIndexOf("/");
+            scenesNames.Add(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
+            Debug.Log(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
+        }
+
     }
 
-    public void LoadSave(){
+    public void LoadSave()
+    {
         bestTimes = SaveManager.instance.bestTimes;
     }
 
 
     private int levelNumberPlayerChecks;
-    public void SelectLevel(int levelNumber){
+    public void SelectLevel(int levelNumber)
+    {
         levelNameTMP.text = "LEVEL " + levelNumber;
 
-        if(bestTimes[levelNumber-1] != 0f) //if value of level time is not empty
-            levelTimeTMP.text = System.Math.Round(bestTimes[levelNumber-1], 2).ToString();
+        if (bestTimes[levelNumber - 1] != 0f) //if value of level time is not empty
+            levelTimeTMP.text = System.Math.Round(bestTimes[levelNumber - 1], 2).ToString();
         else
             levelTimeTMP.text = "NONE";
 
         levelNumberPlayerChecks = levelNumber;
+
+
+        levelDescriptionPanel.SetActive(false);
+        foreach (string sceneName in scenesNames)
+        {
+            if (sceneName == ("Level" + levelNumber)){
+                levelDescriptionPanel.SetActive(true);
+                Debug.Log("jest taki level mordzia");
+            } 
+        }
     }
 
-    public void PlayLevel(){
+    public void PlayLevel()
+    {
         gm.levelNumber = levelNumberPlayerChecks;
-        SceneManager.LoadScene("Level" + levelNumberPlayerChecks);
+        SceneManager.LoadScene("Level" + Convert.ToString(levelNumberPlayerChecks));
+    }
+
+    private string equation = "";
+    DataTable dt = new DataTable();
+    public void Calculator(string clickedButton)
+    {
+        Debug.Log(clickedButton);
+
+        equation += clickedButton;
+
+        CalculatorDisplayTMP.text = equation;
+    }
+
+    public void Calculate()
+    {
+
+        var v = dt.Compute(equation, "");
+        Debug.Log("result = " + v);
+
+        equation = "";
+        CalculatorDisplayTMP.text = Convert.ToString(v);
+
+        SelectLevel(Convert.ToInt32(v));
     }
 
 }
