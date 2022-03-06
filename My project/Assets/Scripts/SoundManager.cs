@@ -151,8 +151,11 @@ public class SoundManager : MonoBehaviour
     
 
     //slider
-    void SetVolume(float sliderValue){
-        
+    public void SetVolume(float sliderValue){
+
+        Debug.Log("slider value = " + sliderValue);
+        Debug.Log("po matmie " + Mathf.Log10(sliderValue) * 20);
+        audioSrc.volume = sliderValue;
     }
 
     // Update is called once per frame

@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 9725449}
   - component: {fileID: 9725450}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,21 +147,21 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9725448}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7073383, w: 0.7068752}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1451513615}
   - {fileID: 1822394488}
   - {fileID: 737125676}
-  m_Father: {fileID: 1527191058}
+  m_Father: {fileID: 1986965543}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.038}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -665, y: -258}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 153.9, y: 18.5}
+  m_SizeDelta: {x: 104.2838, y: 22.045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9725450
 MonoBehaviour:
@@ -210,17 +210,17 @@ MonoBehaviour:
   m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.001
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1276634299}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1276634302}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4157,7 +4157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 123.4, y: 0.80001}
+  m_AnchoredPosition: {x: 91.2, y: 0.80001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813494087
@@ -6502,17 +6502,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259466037}
   m_CullTransparentMesh: 1
---- !u!1 &1276634299 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9050294304770202456, guid: f1d0f1443d714e84caaf0bed67260dc6, type: 3}
-  m_PrefabInstance: {fileID: 1404087581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1276634302 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9050294304770202457, guid: f1d0f1443d714e84caaf0bed67260dc6, type: 3}
   m_PrefabInstance: {fileID: 1404087581}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1276634299}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39e7c0323fe2f5342a70b0928c53522d, type: 3}
@@ -7691,7 +7686,6 @@ RectTransform:
   - {fileID: 1925282094}
   - {fileID: 21953688}
   - {fileID: 1986965543}
-  - {fileID: 9725449}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10635,6 +10629,7 @@ RectTransform:
   - {fileID: 813494086}
   - {fileID: 710954607}
   - {fileID: 1302433620}
+  - {fileID: 9725449}
   m_Father: {fileID: 1527191058}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
