@@ -20,7 +20,7 @@ public class PlayerLife : MonoBehaviour
 
         gm.startPos = transform.position;
 
-        Debug.Log("Start pos = " + gm.startPos);
+        // Debug.Log("Start pos = " + gm.startPos);
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();

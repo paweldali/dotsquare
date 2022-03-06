@@ -37,7 +37,7 @@ public class SelectLevelMenu : MonoBehaviour
             string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
             int lastSlash = scenePath.LastIndexOf("/");
             scenesNames.Add(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
-            Debug.Log(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
+            // Debug.Log(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
         }
 
     }
@@ -66,7 +66,6 @@ public class SelectLevelMenu : MonoBehaviour
         {
             if (sceneName == ("Level" + levelNumber)){
                 levelDescriptionPanel.SetActive(true);
-                Debug.Log("jest taki level mordzia");
             } 
         }
     }
@@ -81,7 +80,6 @@ public class SelectLevelMenu : MonoBehaviour
     DataTable dt = new DataTable();
     public void Calculator(string clickedButton)
     {
-        Debug.Log(clickedButton);
 
         equation += clickedButton;
 
@@ -92,7 +90,6 @@ public class SelectLevelMenu : MonoBehaviour
     {
 
         var v = dt.Compute(equation, "");
-        Debug.Log("result = " + v);
 
         equation = "";
         CalculatorDisplayTMP.text = Convert.ToString(v);

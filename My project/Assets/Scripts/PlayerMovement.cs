@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             Debug.Log("jumper");
         }
-        Debug.Log("jumper2");
+        // Debug.Log("jumper2");
     }
 
 
@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
             _isSpeedBoosted = false;
             _isSpeedSlowed = false;
 
-            Debug.Log("entered ground");
+            // Debug.Log("entered ground");
         }
         else if (collision.gameObject.CompareTag("GreenGround")) //speed booster
         {
@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
             _isSpeedBoosted = true;
             _isSpeedSlowed = false;
 
-            Debug.Log("GreenGround");
+            // Debug.Log("GreenGround");
         }
         else if (collision.gameObject.CompareTag("OrangeGround")) //trampoline
         { 
@@ -154,26 +154,26 @@ public class PlayerMovement : MonoBehaviour
             _isSpeedBoosted = false;
             _isSpeedSlowed = true;
         }
-        else if (collision.gameObject.CompareTag("Marshmallow"))
-        {
-            Debug.Log("entered Marshmallow");
-        }
+        // else if (collision.gameObject.CompareTag("Marshmallow"))
+        // {
+        //     // Debug.Log("entered Marshmallow");
+        // }
     }
     void OnCollisionExit2D(Collision2D collision)
     {
         
 
-        if (collision.gameObject.CompareTag("Marshmallow"))
-        {
-            Debug.Log("exited Marshmallow");
-        }
-        else if (collision.gameObject.CompareTag("Ground")) //normal
+        // if (collision.gameObject.CompareTag("Marshmallow"))
+        // {
+        //     // Debug.Log("exited Marshmallow");
+        // }
+        if (collision.gameObject.CompareTag("Ground")) //normal
         {
             _isAlive = true;
             _isSpeedBoosted = false;
             _isSpeedSlowed = false;
 
-            Debug.Log("exited ground");
+            // Debug.Log("exited ground");
         }
     }
 
