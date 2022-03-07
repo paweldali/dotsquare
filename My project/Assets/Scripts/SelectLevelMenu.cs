@@ -53,6 +53,8 @@ public class SelectLevelMenu : MonoBehaviour
     {
         levelNameTMP.text = "LEVEL " + levelNumber;
 
+        Debug.Log("besttimes size = " + bestTimes.Length);
+
         if (bestTimes[levelNumber - 1] != 0f) //if value of level time is not empty
             levelTimeTMP.text = System.Math.Round(bestTimes[levelNumber - 1], 2).ToString();
         else
@@ -73,6 +75,7 @@ public class SelectLevelMenu : MonoBehaviour
     public void PlayLevel()
     {
         gm.levelNumber = levelNumberPlayerChecks;
+        Debug.Log("Level" + Convert.ToString(levelNumberPlayerChecks));
         SceneManager.LoadScene("Level" + Convert.ToString(levelNumberPlayerChecks));
     }
 

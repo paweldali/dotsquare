@@ -23,6 +23,7 @@ public class SaveManager : MonoBehaviour
 
     public void Load()
     {
+        Debug.Log("path to save file = " + Application.persistentDataPath);
         if(File.Exists(Application.persistentDataPath + "/gameData.dat")){
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/gameData.dat", FileMode.Open);
