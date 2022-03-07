@@ -26,9 +26,6 @@ public class PlayerMovement : MonoBehaviour
     private bool _isAlive = true;
     private bool _isSpeedBoosted = false;
     private bool _isSpeedSlowed = false;
-
-    private bool _rightMove = false, _leftMove = false;
-
     private float _timeToJumpEnterCollision = 0.5f; //works as time to jump after leaving collision 
 
     // Start is called before the first frame update
@@ -82,23 +79,6 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("jumper");
         }
     }
-
-    public void MoveLeftButton(){
-        _leftMove = true;
-    }
-
-    public void StopMoveLeftButton(){
-        _leftMove = false;
-    }
-
-    public void MoveRightButton(){
-        _rightMove = true;
-    }
-
-    public void StopMoveRightButton(){
-        _rightMove = false;
-    }
-
 
     public void JumpButton(){
         if ((Mathf.Abs(_rigidbody.velocity.y) < 0.01f) ||  (_timeToJumpEnterCollision > 0)){
