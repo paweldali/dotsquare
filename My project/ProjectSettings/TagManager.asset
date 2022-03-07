@@ -12,6 +12,7 @@ TagManager:
   - GM
   - Checkpoint
   - Marshmallow
+  - SoundManager
   layers:
   - Default
   - TransparentFX

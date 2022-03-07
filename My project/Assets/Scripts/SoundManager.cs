@@ -9,10 +9,8 @@ using TMPro;
 // [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
-    static SoundManager instance = null;
+    private static SoundManager instance = null;
 
-    public TextMeshProUGUI TitleDisplayerTMP;
-    public TextMeshProUGUI TimeDisplayerTMP;
 
     // Start is called before the first frame update
     public static AudioClip playerJumpSound,
@@ -35,6 +33,7 @@ public class SoundManager : MonoBehaviour
             instance = this;
             GameObject.DontDestroyOnLoad(gameObject);
         }
+        audioSrc = GetComponent<AudioSource>();
     }
 
     void Start()
@@ -57,6 +56,14 @@ public class SoundManager : MonoBehaviour
         PlayMusic();
     }
 
+    void Update()
+    {
+        if (audioSrc == null) 
+        {
+            audioSrc = GetComponent<AudioSource>();
+        }
+    }
+
     public void PlayMusic()
     {
         if (audioSrc.isPlaying)
@@ -64,24 +71,38 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        _currentTrack--;
-        if (_currentTrack < 0)
+        instance._currentTrack--;
+        if (instance._currentTrack < 0)
         {
-            _currentTrack = musicClips.Length - 1;
+            instance._currentTrack = instance.musicClips.Length - 1;
         }
 
-        StartCoroutine("WaitForMusicEnd");
+        instance.StartCoroutine("WaitForMusicEnd");
+    }
+
+    public bool GetIsPlaying(){
+        return audioSrc.isPlaying;
+    }
+
+    public void StopMusic()
+    {
+        instance.StopCoroutine("WaitForMusicEnd");
+        audioSrc.Stop();
     }
 
     IEnumerator WaitForMusicEnd()
     {
         while (audioSrc.isPlaying)
         {
-            _playTime = (int) audioSrc.time;
-            ShowPlayTime();
+            _playTime = (int)audioSrc.time;
+            // ShowPlayTime();
             yield return null;
         }
         NextTitle();
+    }
+
+    public int GetPlayTime(){
+        return _playTime;
     }
 
     public void NextTitle()
@@ -96,7 +117,7 @@ public class SoundManager : MonoBehaviour
 
         audioSrc.clip = musicClips[_currentTrack];
         audioSrc.Play();
-        ShowCurrentTitle();
+        // ShowCurrentTitle();
 
 
         //show title
@@ -116,19 +137,28 @@ public class SoundManager : MonoBehaviour
 
         audioSrc.clip = musicClips[_currentTrack];
         audioSrc.Play();
-        ShowCurrentTitle();
+        // ShowCurrentTitle();
 
         //show title
 
         StartCoroutine("WaitForMusicEnd");
     }
 
-    public void StopMusic(){
-        StopCoroutine("WaitForMusicEnd");
-        audioSrc.Stop();
+    public string GetCurrentTitle(){
+        if(audioSrc != null) return audioSrc.clip.name;
+        return "";
     }
 
-    public void MuteMusic(){
+    public int GetFullTrackLength(){
+        _fullTrackLength = (int)audioSrc.clip.length;
+        return _fullTrackLength;
+    }
+
+
+
+
+    public void MuteMusic()
+    {
         audioSrc.mute = !audioSrc.mute;
     }
 
@@ -138,29 +168,13 @@ public class SoundManager : MonoBehaviour
     private int _seconds;
     private int _minutes;
 
-    void ShowCurrentTitle(){
-        TitleDisplayerTMP.text = audioSrc.clip.name;
-        _fullTrackLength = (int) audioSrc.clip.length;
-    }
-
-    void ShowPlayTime(){
-        _seconds = _playTime % 60;
-        _minutes = (_playTime / 60) % 60;
-        TimeDisplayerTMP.text = _minutes + ":" + _seconds.ToString("D2") + "/" + ((_fullTrackLength/60) % 60) + ":" + (_fullTrackLength%60).ToString("D2");
-    }
-    
 
     //slider
-    public void SetVolume(float sliderValue){
+    public void SetVolume(float sliderValue)
+    {
 
         audioSrc.volume = sliderValue;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
 
 
     public static void PlaySound(string clip)
