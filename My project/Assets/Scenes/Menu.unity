@@ -534,6 +534,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8912431696720966476, guid: 201a541a5d73541419ffef753580466a, type: 3}
+      propertyPath: IsJoystick
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8912431696720966479, guid: 201a541a5d73541419ffef753580466a, type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -8,6 +8,8 @@ public class MovingPlatform : MonoBehaviour
     public float speed;
     public Transform startPos;
 
+
+
     Vector3 nextPos;
 
     // Start is called before the first frame update

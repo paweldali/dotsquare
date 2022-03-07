@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Joystick2 _joystick;
 
-
+    public bool IsJoystick = true;
     public float MovementSpeed = 1;
     public float JumpForce = 40;
 
@@ -45,10 +45,10 @@ public class PlayerMovement : MonoBehaviour
         // JOYSTICK
         var movement = 0f;
 
-        if(_joystick.Horizontal()!= 0f){ //JOYSTICK
+        if(IsJoystick){ //JOYSTICK
             movement = _joystick.Horizontal();
         }
-        else if (Input.GetAxis("Horizontal") != 0f){ //KEYBOARD
+        else{ //KEYBOARD
             movement = Input.GetAxis("Horizontal");
         }
 
