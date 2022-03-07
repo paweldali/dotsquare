@@ -159,9 +159,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1457560277885911424}
         m_TargetAssemblyTypeName: Radio, Assembly-CSharp
-        m_MethodName: PreviousTitle
+        m_MethodName: PlayPrevTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -310,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TitleDisplayerTMP: {fileID: 1471869724227430210}
   TimeDisplayerTMP: {fileID: 1471869723686446695}
+  VolumeSlider: {fileID: 1471869724941766456}
 --- !u!1 &1471869723509199194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,9 +1050,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
-        m_MethodName: NextTitle
+      - m_Target: {fileID: 1457560277885911424}
+        m_TargetAssemblyTypeName: Radio, Assembly-CSharp
+        m_MethodName: PlayNextTrack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1912,8 +1913,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 1457560277885911424}
+        m_TargetAssemblyTypeName: Radio, Assembly-CSharp
         m_MethodName: MuteMusic
         m_Mode: 1
         m_Arguments:
@@ -2167,8 +2168,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+      - m_Target: {fileID: 1457560277885911424}
+        m_TargetAssemblyTypeName: Radio, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:

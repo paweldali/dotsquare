@@ -1102,14 +1102,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7262280339339117444}
     m_Modifications:
-    - target: {fileID: 1471869723175670690, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2845420325958585983}
-    - target: {fileID: 1471869723175670690, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayPrevTrack
-      objectReference: {fileID: 0}
     - target: {fileID: 1471869723488852244, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
       propertyPath: m_Name
       value: AudioPlayerMenu2
@@ -1198,18 +1190,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1471869724014358358, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2845420325958585983}
-    - target: {fileID: 1471869724014358358, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayNextTrack
-      objectReference: {fileID: 0}
-    - target: {fileID: 1471869724014358358, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Radio, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 1471869724117107384, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1221,30 +1201,6 @@ PrefabInstance:
     - target: {fileID: 1471869724117107384, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1471869724662351477, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2845420325958585983}
-    - target: {fileID: 1471869724662351477, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MuteMusic
-      objectReference: {fileID: 0}
-    - target: {fileID: 1471869724662351477, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Radio, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1471869724941766456, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2845420325958585983}
-    - target: {fileID: 1471869724941766456, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 1471869724941766456, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Radio, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1471869725149609176, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1261,14 +1217,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1471869723488852245, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
   m_PrefabInstance: {fileID: 3694849367214919679}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2845420325958585983 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1457560277885911424, guid: 655a419c6c8d60145912f0f373e12406, type: 3}
-  m_PrefabInstance: {fileID: 3694849367214919679}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa4995ee6d5848b449e41587404c2a8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -90,6 +90,10 @@ public class SoundManager : MonoBehaviour
         audioSrc.Stop();
     }
 
+    public float GetVolumeLevel(){
+        return audioSrc.volume;
+    }
+
     IEnumerator WaitForMusicEnd()
     {
         while (audioSrc.isPlaying)

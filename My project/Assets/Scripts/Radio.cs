@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Radio : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class Radio : MonoBehaviour
     public TextMeshProUGUI TitleDisplayerTMP;
     public TextMeshProUGUI TimeDisplayerTMP;
 
+    public Slider VolumeSlider;
+
     // Start is called before the first frame update
     void Start()
     {
-        _soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>();
+        _soundManager = GameObject.FindGameObjectWithTag("SoundManager").GetComponent<SoundManager>(); 
         // ShowCurrentTitle();
     }
 
@@ -23,6 +26,7 @@ public class Radio : MonoBehaviour
     {
         ShowCurrentTitle();
         ShowPlayTime();
+        VolumeSlider.value = _soundManager.GetVolumeLevel();
     }
 
     public void PlayMusic(){
