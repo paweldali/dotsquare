@@ -39,15 +39,17 @@ public class PlayerMovement : MonoBehaviour
     
     private void Update()
     {   
-        // JOYSTICK
-        var movement = 0f;
 
-        if(IsJoystick){ //JOYSTICK
-            movement = _joystick.Horizontal();
-        }
-        else{ //KEYBOARD
-            movement = Input.GetAxis("Horizontal");
-        }
+        var movement = _joystick.Horizontal();
+        // JOYSTICK
+        // var movement = 0f;
+
+        // if(IsJoystick){ //JOYSTICK
+        //     movement = _joystick.Horizontal();
+        // }
+        // else{ //KEYBOARD
+        //     movement = Input.GetAxis("Horizontal");
+        // }
 
         if (_isAlive)
         {
@@ -84,7 +86,9 @@ public class PlayerMovement : MonoBehaviour
         if ((Mathf.Abs(_rigidbody.velocity.y) < 0.01f) ||  (_timeToJumpEnterCollision > 0)){
             _timeToJumpEnterCollision = 0;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
-            Debug.Log("jumper");
+
+            
+            SoundManager.PlaySound("jump");
         }
         // Debug.Log("jumper2");
     }

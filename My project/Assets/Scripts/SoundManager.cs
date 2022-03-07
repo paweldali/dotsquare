@@ -20,6 +20,8 @@ public class SoundManager : MonoBehaviour
 
     public AudioClip[] musicClips;
     static AudioSource audioSrc;
+
+    public AudioSource playerAudioSrc;
     private int _currentTrack;
 
     void Awake()
@@ -186,7 +188,8 @@ public class SoundManager : MonoBehaviour
         switch (clip)
         {
             case "jump":
-                audioSrc.volume = 0.15f;
+                Debug.Log("jumper sound");
+                audioSrc.volume = 0.45f;
                 audioSrc.PlayOneShot(playerJumpSound);
                 break;
             case "dead":

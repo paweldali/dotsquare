@@ -7,9 +7,21 @@ public class PlayerSounds : MonoBehaviour
     // Start is called before the first frame update
 
     private bool grounded = false;
+    
     void Start()
     {
         
+    }
+
+        // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {   
+            //in PlayerMovement is called on JumpButton
+            Debug.Log("space key was pressed");
+            SoundManager.PlaySound("jump");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,16 +55,7 @@ public class PlayerSounds : MonoBehaviour
         grounded = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {   
-            
-            print("space key was pressed");
-            SoundManager.PlaySound("jump");
-        }
-    }
+
 
     
 }
