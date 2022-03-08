@@ -30,8 +30,15 @@ public class PlayerSounds : MonoBehaviour
 
         if (collision.gameObject.CompareTag("RedGround"))
         {
-            print("red tground sound playin");
             SoundManager.PlaySound("dead");
+        }
+        else if (collision.gameObject.CompareTag("OrangeGround"))
+        {
+            SoundManager.PlaySound("superjump");
+        }
+        else if (collision.gameObject.CompareTag("GreenGround"))
+        {
+            SoundManager.PlaySound("superspeed");
         }
 
 
