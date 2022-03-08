@@ -189,11 +189,9 @@ public class SoundManager : MonoBehaviour
         {
             case "jump":
                 Debug.Log("jumper sound");
-                audioSrc.volume = 0.45f;
                 audioSrc.PlayOneShot(playerJumpSound);
                 break;
             case "dead":
-                audioSrc.volume = 1.0f;
                 int randomClipNumber = Random.Range(0, 5 + 1);
 
                 switch (randomClipNumber)
@@ -217,7 +215,6 @@ public class SoundManager : MonoBehaviour
                 }
                 break;
             case "win":
-                audioSrc.volume = 1.0f;
 
                 int randomClipNumber2 = Random.Range(1, 2 + 1);
 
@@ -237,7 +234,6 @@ public class SoundManager : MonoBehaviour
                 }
                 break;
             case "checkpoint":
-                audioSrc.volume = 0.25f;
                 audioSrc.PlayOneShot(checkpoint1);
                 break;
 
