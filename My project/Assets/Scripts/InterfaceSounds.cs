@@ -6,7 +6,6 @@ public class InterfaceSounds : MonoBehaviour
 {
 
     public void PlayButtonSound(){
-        // Debug.Log("cojest");
         SoundManager.PlaySound("button");
     }
 }
