@@ -5,6 +5,9 @@ using UnityEngine;
 public class UnstableGround : MonoBehaviour
 {
 
+    public Color touchColor;
+    public Color afterColor;
+
     public float TimeToGoingDown = 1.5f;
     public float GravityAfterTimePlayerTouched = 1;
     private Rigidbody2D _rigidbody;
@@ -28,7 +31,9 @@ public class UnstableGround : MonoBehaviour
 
         if(TimeToGoingDown < 0){
             _rigidbody.gravityScale = GravityAfterTimePlayerTouched;
-            _spriteRenderer.color = Color.red;
+
+            _spriteRenderer.color = afterColor;
+            // _spriteRenderer.color = Color.red;
         }
     }
 
@@ -37,7 +42,9 @@ public class UnstableGround : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _playerCollided = true;
-            _spriteRenderer.color = Color.yellow;
+            
+            // _spriteRenderer.color = Color.yellow;
+            _spriteRenderer.color = touchColor;
         }
     }
 }

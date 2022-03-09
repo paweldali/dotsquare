@@ -51,6 +51,8 @@ public class SelectLevelMenu : MonoBehaviour
     private int levelNumberPlayerChecks;
     public void SelectLevel(int levelNumber)
     {
+        if(levelNumber > bestTimes.Length || levelNumber < 0) return;
+
         levelNameTMP.text = "LEVEL " + levelNumber;
 
         Debug.Log("besttimes size = " + bestTimes.Length);
@@ -91,13 +93,22 @@ public class SelectLevelMenu : MonoBehaviour
 
     public void Calculate()
     {
+        if(equation == "") return;
 
-        var v = dt.Compute(equation, "");
+        try{
+            var v = dt.Compute(equation, "");
+            equation = "";
+            CalculatorDisplayTMP.text = Convert.ToString(v);
+            SelectLevel(Convert.ToInt32(v));
+        }catch(OverflowException e){
+            CalculatorDisplayTMP.text = "81G NUMB3R, T00 81G";
+            throw e;
+        }catch(SyntaxErrorException e){
+            CalculatorDisplayTMP.text = "3RR0R";
+            throw e;
+        }
 
-        equation = "";
-        CalculatorDisplayTMP.text = Convert.ToString(v);
-
-        SelectLevel(Convert.ToInt32(v));
+        
     }
 
 }
