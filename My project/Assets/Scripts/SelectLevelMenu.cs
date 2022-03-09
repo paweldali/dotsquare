@@ -102,7 +102,10 @@ public class SelectLevelMenu : MonoBehaviour
             SelectLevel(Convert.ToInt32(v));
         }catch(OverflowException e){
             CalculatorDisplayTMP.text = "81G NUMB3R, T00 81G";
-            Debug.Log(e);
+            throw e;
+        }catch(SyntaxErrorException e){
+            CalculatorDisplayTMP.text = "3RR0R";
+            throw e;
         }
 
         
