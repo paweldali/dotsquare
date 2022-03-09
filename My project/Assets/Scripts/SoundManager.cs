@@ -164,13 +164,19 @@ public class SoundManager : MonoBehaviour
     }
 
     public string GetCurrentTitle(){
-        if(audioSrc != null) return audioSrc.clip.name;
-        return "";
+
+        if(audioSrc is not null && audioSrc.clip is not null) return audioSrc.clip.name;
+        return musicClips[0].name;
+
     }
 
     public int GetFullTrackLength(){
-        _fullTrackLength = (int)audioSrc.clip.length;
-        return _fullTrackLength;
+        if(audioSrc is not null && audioSrc.clip is not null)
+        {
+            _fullTrackLength = (int)audioSrc.clip.length;
+            return _fullTrackLength;
+        }
+        return (int)musicClips[0].length;
     }
 
 
