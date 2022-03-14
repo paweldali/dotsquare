@@ -31,9 +31,7 @@ public class SaveManager : MonoBehaviour
             GameData gameData = (GameData)bf.Deserialize(file);
 
             bestTimes = gameData.bestTimes;
-
             LastPlayedLevel = gameData.LastPlayedLevel;
-
             file.Close();
         }
     }

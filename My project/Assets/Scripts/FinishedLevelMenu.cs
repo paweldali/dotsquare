@@ -48,9 +48,6 @@ public class FinishedLevelMenu : MonoBehaviour
             gm.levelNumber++;
             SceneManager.LoadScene("Level" + finishedLevelNumber);
         }
-        else if(gm.numberOfLevels == finishedLevelNumber){
-            textDisplay.text = "There are no more levels. Or you can't find them? :)";
-        }
         else Debug.Log("There is no more levels");
     }
 }
