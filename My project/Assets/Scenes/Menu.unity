@@ -808,6 +808,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  LastPlayedLevel: 0
 --- !u!4 &109869574
 Transform:
   m_ObjectHideFlags: 0
@@ -2861,7 +2862,7 @@ MonoBehaviour:
   isLevelCompleted: 0
   levelTime: 0
   levelNumber: 1
-  numberOfLevels: 6
+  numberOfLevels: 10
 --- !u!4 &637026579
 Transform:
   m_ObjectHideFlags: 0
