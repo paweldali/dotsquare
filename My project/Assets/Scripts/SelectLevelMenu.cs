@@ -15,6 +15,7 @@ public class SelectLevelMenu : MonoBehaviour
     private GameMaster gm;
 
     private float[] bestTimes;
+    private int LastPlayedLevel;
 
     public GameObject levelDescriptionPanel;
 
@@ -45,6 +46,7 @@ public class SelectLevelMenu : MonoBehaviour
     public void LoadSave()
     {
         bestTimes = SaveManager.instance.bestTimes;
+        LastPlayedLevel = SaveManager.instance.LastPlayedLevel;
     }
 
 
