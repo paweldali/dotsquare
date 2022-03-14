@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
 {
+
+    public static AchievementManager instance;
     public static List<Achievement> achievements;
 
-    public int LevelTime;
+    public float LevelTime;
 
     public bool AchievementUnlocked(string achievementName)
     {
@@ -29,6 +31,16 @@ public class AchievementManager : MonoBehaviour
 
     private void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         InitializeAchievements();
     }
 
