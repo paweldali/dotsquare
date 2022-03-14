@@ -5,20 +5,18 @@ using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
 {
+    public static List<Achievement> achievements;
 
-    public static AchievementManager instance;
-    public static List<Achievement> Achievements;
-
-    public float LevelTime = 1000f;
+    public int LevelTime;
 
     public bool AchievementUnlocked(string achievementName)
     {
         bool result = false;
 
-        if (Achievements == null)
+        if (achievements == null)
             return false;
 
-        Achievement[] achievementsArray = Achievements.ToArray();
+        Achievement[] achievementsArray = achievements.ToArray();
         Achievement a = Array.Find(achievementsArray, ach => achievementName == ach.title);
 
         if (a == null)
@@ -31,28 +29,18 @@ public class AchievementManager : MonoBehaviour
 
     private void Start()
     {
-         if(instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         InitializeAchievements();
     }
 
     private void InitializeAchievements()
     {
-        if (Achievements != null)
+        if (achievements != null)
             return;
 
-        Achievements = new List<Achievement>();
-        Achievements.Add(new Achievement("Son Of Thunder", "Complete level in less than 10 seconds. ", (object o) => LevelTime <= 10f));
-        Achievements.Add(new Achievement("Impossible", "Complete level in less than 5 seconds.", (object o) => LevelTime <= 5f));
-        Achievements.Add(new Achievement("God or Cheater", "Complete level in less than 1 second.", (object o) => LevelTime <= 1f));
+        achievements = new List<Achievement>();
+        achievements.Add(new Achievement("Son Of Thunder", "Complete level in less than 10 seconds. ", (object o) => LevelTime <= 10f));
+        achievements.Add(new Achievement("Impossible", "Complete level in less than 5 seconds.", (object o) => LevelTime <= 5f));
+        achievements.Add(new Achievement("God or Cheater", "Complete level in less than 1 second.", (object o) => LevelTime <= 1f));
     }
 
     private void Update()
@@ -62,10 +50,10 @@ public class AchievementManager : MonoBehaviour
 
     private void CheckAchievementCompletion()
     {
-        if (Achievements == null)
+        if (achievements == null)
             return;
 
-        foreach (var achievement in Achievements)
+        foreach (var achievement in achievements)
         {
             achievement.UpdateCompletion();
         }
