@@ -8,7 +8,7 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance { get; private set; }
 
     public float[] bestTimes = new float[100];
-    public int LastPlayedLevel;
+    public int LastPlayedLevel = 1;
 
     private void Awake()
     {
@@ -30,8 +30,11 @@ public class SaveManager : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/gameData.dat", FileMode.Open);
             GameData gameData = (GameData)bf.Deserialize(file);
 
+
             bestTimes = gameData.bestTimes;
             LastPlayedLevel = gameData.LastPlayedLevel;
+
+            Debug.Log("last played level = " +  LastPlayedLevel);
             file.Close();
         }
     }

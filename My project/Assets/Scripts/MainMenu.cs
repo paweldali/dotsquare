@@ -12,7 +12,6 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame(){
-        gm.levelNumber = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + gm.levelNumber);
         
         //SceneManager.LoadScene("Level1");

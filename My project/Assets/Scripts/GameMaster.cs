@@ -36,6 +36,8 @@ public class GameMaster : MonoBehaviour
             Destroy(gameObject);
         }
 
+        levelNumber = SaveManager.instance.LastPlayedLevel;
+
         //timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
 
@@ -67,7 +69,6 @@ public class GameMaster : MonoBehaviour
 
             }
 
-            AchievementManager.instance.LevelTime = levelTime;
 
             isLevelCompleted = false;
             SceneManager.LoadScene("FinishedLevel");
