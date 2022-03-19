@@ -10,7 +10,7 @@ public class CameraSmooth : MonoBehaviour
 
 
 
-    private void FixedUpdate() 
+    private void LateUpdate() 
     {
         follow();
     }
