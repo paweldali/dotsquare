@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _joystick: {fileID: 0}
   IsJoystick: 0
-  MovementSpeed: 20
+  MovementSpeed: 15
   JumpForce: 40
   SpeedMultiplier: 2
   SpeedDivider: 2
