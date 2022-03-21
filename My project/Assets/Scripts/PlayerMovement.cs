@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Joystick2 _joystick;
 
-    public bool IsJoystick = true;
     public float MovementSpeed = 1;
     public float JumpForce = 40;
 
@@ -31,7 +30,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-
+        
+        _joystick.ArrowKeysSimulationEnabled = true;
         _rigidbody = GetComponent<Rigidbody2D>();
 
     }

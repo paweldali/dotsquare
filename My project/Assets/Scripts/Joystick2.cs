@@ -23,7 +23,7 @@ namespace EasyJoystick {
       /// Enable it if you want to use your keyboard's arrow keys as a joystick too.
       /// </summary>
       [Tooltip ("enable it if you want to use your keyboard's arrow keys as a joystick too.")]
-      public bool ArrowKeysSimulationEnabled = false ;
+      public bool ArrowKeysSimulationEnabled = true ;
 
       private Vector2 point ;
       private Vector2 normalizedPoint ;
@@ -42,6 +42,7 @@ namespace EasyJoystick {
 
 
 
+      
       private void OnEnable () {
          OnPointerUp (null) ;
       }
