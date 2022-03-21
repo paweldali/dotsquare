@@ -15,11 +15,13 @@ public class SelectLevelMenu : MonoBehaviour
     private GameMaster gm;
 
     private float[] bestTimes;
+    private int[] levelsTries;
 
     public GameObject levelDescriptionPanel;
 
     public TextMeshProUGUI levelNameTMP;
     public TextMeshProUGUI levelTimeTMP;
+    public TextMeshProUGUI levelTriesTMP;
     public TextMeshProUGUI CalculatorDisplayTMP;
 
     private List<string> scenesNames = new List<string>();
@@ -45,6 +47,7 @@ public class SelectLevelMenu : MonoBehaviour
     public void LoadSave()
     {
         bestTimes = SaveManager.instance.bestTimes;
+        levelsTries = SaveManager.instance.levelsTries;
     }
 
 
@@ -64,6 +67,8 @@ public class SelectLevelMenu : MonoBehaviour
 
         levelNumberPlayerChecks = levelNumber;
 
+        levelTriesTMP.text = levelsTries[levelNumber - 1].ToString();
+
 
         levelDescriptionPanel.SetActive(false);
         foreach (string sceneName in scenesNames)
@@ -78,6 +83,10 @@ public class SelectLevelMenu : MonoBehaviour
     {
         gm.levelNumber = levelNumberPlayerChecks;
         Debug.Log("Level" + Convert.ToString(levelNumberPlayerChecks));
+
+        SaveManager.instance.levelsTries[levelNumberPlayerChecks - 1] += 1;
+        SaveManager.instance.Save();
+
         SceneManager.LoadScene("Level" + Convert.ToString(levelNumberPlayerChecks));
     }
 

@@ -8,6 +8,7 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance { get; private set; }
 
     public float[] bestTimes = new float[100];
+    public int[] levelsTries = new int[100];
     public int LastPlayedLevel = 1;
 
     private void Awake()
@@ -33,6 +34,7 @@ public class SaveManager : MonoBehaviour
 
             bestTimes = gameData.bestTimes;
             LastPlayedLevel = gameData.LastPlayedLevel;
+            levelsTries = gameData.levelsTries;
 
             Debug.Log("last played level = " +  LastPlayedLevel);
             file.Close();
@@ -48,6 +50,7 @@ public class SaveManager : MonoBehaviour
 
         gameData.bestTimes = bestTimes;
         gameData.LastPlayedLevel = LastPlayedLevel;
+        gameData.levelsTries = levelsTries;
 
         bf.Serialize(file, gameData);
         file.Close();
@@ -57,5 +60,6 @@ public class SaveManager : MonoBehaviour
 [Serializable]
 class GameData{
     public float[] bestTimes;
+    public int[] levelsTries;
     public int LastPlayedLevel;
 }
