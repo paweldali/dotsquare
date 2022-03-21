@@ -102,6 +102,10 @@ public class PlayerLife : MonoBehaviour
     private void RevivePlayer(){
         anim.ResetTrigger("Death");
 
+        SaveManager.instance.levelsTries[gm.levelNumber - 1] += 1; //number of level tries++
+        SaveManager.instance.Save();
+
+
         if(checkpointed)
             transform.position =  gm.lastCheckPointPos;
         else
