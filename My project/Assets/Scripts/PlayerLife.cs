@@ -9,6 +9,8 @@ public class PlayerLife : MonoBehaviour
     private Rigidbody2D rb;
     private GameMaster gm;
 
+    [SerializeField] ParticleSystem deadParticle = null;
+
     private Timer timer;
 
     public bool checkpointed;
@@ -24,7 +26,8 @@ public class PlayerLife : MonoBehaviour
         checkpointed = false;
     }
     // Update is called once per frame
-    public void Update(){
+    public void Update()
+    {
         if (Input.GetKey("r"))
         {
             checkpointed = false;
@@ -51,38 +54,50 @@ public class PlayerLife : MonoBehaviour
             OrangeJumper();
         }
     }
-    private void PurpleWeaker(){
+    private void PurpleWeaker()
+    {
         Debug.Log("purple animation");
-        anim.SetTrigger("Purple"); 
+        anim.SetTrigger("Purple");
     }
 
-    private void OrangeJumper(){
+    private void OrangeJumper()
+    {
         Debug.Log("oragne animation");
-        anim.SetTrigger("Orange"); 
+        anim.SetTrigger("Orange");
     }
 
-    private void GreenBooster(){
+    private void GreenBooster()
+    {
         Debug.Log("green booster animation");
-        anim.SetTrigger("Green"); 
+        anim.SetTrigger("Green");
     }
 
     private void Die()
     {
-       rb.bodyType = RigidbodyType2D.Static;
-       anim.SetTrigger("Death"); 
+        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("Death");
+
+        Debug.Log("ded");
+
+        // GetComponent<ParticleSystem>().Play();
+        // ParticleSystem.EmissionModule em = GetComponent<ParticleSystem>().emission;
+        // em.enabled = true;
+
+        deadParticle.Play();
 
     }
 
-    private void RevivePlayer(){
+    private void RevivePlayer()
+    {
         SaveManager.instance.levelsTries[gm.levelNumber - 1] += 1; //number of level tries++
         SaveManager.instance.Save();
-        if(checkpointed)
-            transform.position =  gm.lastCheckPointPos;
+        if (checkpointed)
+            transform.position = gm.lastCheckPointPos;
         else
             transform.position = gm.startPos;
         Debug.Log("Player is alive");
         rb.bodyType = RigidbodyType2D.Dynamic;
-        if(!checkpointed)
+        if (!checkpointed)
         {
             timer = GameObject.Find("Main Camera").GetComponent<Timer>(); //after player death scene is destroyed, so this cant be in start()
             timer.currentTime = 0f;
