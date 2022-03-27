@@ -5240,7 +5240,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.18
+  m_Time: 1
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.3
@@ -5297,12 +5297,12 @@ TrailRenderer:
       m_Mode: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
-    numCornerVertices: 0
+    numCornerVertices: 12
     numCapVertices: 0
     alignment: 0
     textureMode: 1
     shadowBias: 3.32
     generateLightingData: 0
-  m_MinVertexDistance: 0.15
+  m_MinVertexDistance: 0.05
   m_Autodestruct: 0
   m_Emitting: 1
