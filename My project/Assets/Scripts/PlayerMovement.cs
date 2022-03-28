@@ -26,19 +26,20 @@ public class PlayerMovement : MonoBehaviour
     private bool _isSpeedBoosted = false;
     private bool _isSpeedSlowed = false;
     private float _timeToJumpEnterCollision = 0.5f; //works as time to jump after leaving collision 
+    private bool _redGrounded = false;
 
     // Start is called before the first frame update
     private void Start()
     {
-        
+
         _joystick.ArrowKeysSimulationEnabled = true;
         _rigidbody = GetComponent<Rigidbody2D>();
 
     }
     // Update is called once per frame
-    
+
     private void Update()
-    {   
+    {
 
         var movement = _joystick.Horizontal();
         // JOYSTICK
@@ -69,7 +70,8 @@ public class PlayerMovement : MonoBehaviour
 
         }
 
-        if(_timeToJumpEnterCollision > 0){
+        if (_timeToJumpEnterCollision > 0)
+        {
             _timeToJumpEnterCollision -= Time.deltaTime;
         }
 
@@ -82,25 +84,34 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void JumpButton(){
-        if ((Mathf.Abs(_rigidbody.velocity.y) < 0.01f) ||  (_timeToJumpEnterCollision > 0)){
+    public void JumpButton()
+    {
+        if ((Mathf.Abs(_rigidbody.velocity.y) < 0.01f) || (_timeToJumpEnterCollision > 0))
+        {
             _timeToJumpEnterCollision = 0;
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
 
-            
+
             SoundManager.PlaySound("jump");
         }
         // Debug.Log("jumper2");
     }
 
 
+    public bool getRedGrounded()
+    {
+        return _redGrounded;
+    }
+
     //detect collision with other objects
     void OnCollisionEnter2D(Collision2D collision)
     {
         _timeToJumpEnterCollision = 0.5f;
-
+        
         if (collision.gameObject.CompareTag("RedGround")) //ded
         {
+            _redGrounded = true;
+
             _isAlive = false;
             _isSpeedBoosted = false;
             _isSpeedSlowed = false;
@@ -122,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
             // Debug.Log("GreenGround");
         }
         else if (collision.gameObject.CompareTag("OrangeGround")) //trampoline
-        { 
+        {
             _timeToJumpEnterCollision = 0f;
 
             _isAlive = true;
@@ -145,8 +156,8 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-        
 
+        _redGrounded = false;
         // if (collision.gameObject.CompareTag("Marshmallow"))
         // {
         //     // Debug.Log("exited Marshmallow");

@@ -42,6 +42,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7018177913451523352}
     m_Modifications:
+    - target: {fileID: 768773688862999628, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Color.a
+      value: 0.34901962
+      objectReference: {fileID: 0}
+    - target: {fileID: 768773688862999628, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 768773688862999628, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 768773688862999628, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211209560343176139, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211209560343176139, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Parameters.colorGradient.atime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211209560343176139, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211209560343176139, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.10077143
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211209560343176139, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211209560343176139, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1329917453098801176, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -85,6 +125,14 @@ PrefabInstance:
     - target: {fileID: 1329917453098801176, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019927338897795885, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019927338897795885, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 7226877533386837524, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
       propertyPath: m_RootOrder
@@ -477,11 +525,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+--- !u!20 &1953745490284766976 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8824231791912367922, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+  m_PrefabInstance: {fileID: 7019107563276128306}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1953745490284767098 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8824231791912367944, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
   m_PrefabInstance: {fileID: 7019107563276128306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1953745490284767100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8824231791912367950, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+  m_PrefabInstance: {fileID: 7019107563276128306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3370885376329937859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953745490284767100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0c643c5cda3a864586815cbfc84d8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 8912431696720966476}
+  shakeMagnetude: 0.35
+  shakeTime: 0.35
+  mainCamera: {fileID: 1953745490284766976}
 --- !u!1001 &7019107563939541087
 PrefabInstance:
   m_ObjectHideFlags: 0

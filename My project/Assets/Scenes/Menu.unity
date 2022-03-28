@@ -3475,8 +3475,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0}
   isLevelCompleted: 0
   levelTime: 0
-  levelNumber: 1
-  numberOfLevels: 6
+  levelNumber: 20
+  numberOfLevels: 20
 --- !u!4 &637026579
 Transform:
   m_ObjectHideFlags: 0
