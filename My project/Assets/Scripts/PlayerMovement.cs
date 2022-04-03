@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private bool _isSpeedSlowed = false;
     private float _timeToJumpEnterCollision = 0.5f; //works as time to jump after leaving collision 
     private bool _redGrounded = false;
+    private bool _grounded = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -98,15 +99,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    public bool getRedGrounded()
+    public bool GetRedGrounded()
     {
         return _redGrounded;
+    }
+
+    public bool GetGrounded()
+    {
+        return _grounded;
     }
 
     //detect collision with other objects
     void OnCollisionEnter2D(Collision2D collision)
     {
         _timeToJumpEnterCollision = 0.5f;
+        _grounded = true;
         
         if (collision.gameObject.CompareTag("RedGround")) //ded
         {
@@ -156,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D collision)
     {
-
+        _grounded = false;
         _redGrounded = false;
         // if (collision.gameObject.CompareTag("Marshmallow"))
         // {

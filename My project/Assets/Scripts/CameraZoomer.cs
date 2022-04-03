@@ -13,9 +13,11 @@ public class CameraZoomer : MonoBehaviour
     public Camera Cam;
 
     public float Zoom1 = 12.0f;
-    public float Zoom2 = 50.0f;
+    public float Zoom2 = 24.0f;
 
-    public float Speed = 0.01f;
+    public float Speed = 0.00065f;
+
+    public float PlayerVelocityValueToZoomOut = 50.0f;
 
     void Start()
     {
@@ -25,6 +27,16 @@ public class CameraZoomer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Debug.Log(playerMovement.GetComponent<Rigidbody2D>().velocity.x + " " +  playerMovement.GetComponent<Rigidbody2D>().velocity.y);
+
+        if(playerMovement.GetComponent<Rigidbody2D>().velocity.x > PlayerVelocityValueToZoomOut || playerMovement.GetComponent<Rigidbody2D>().velocity.y > PlayerVelocityValueToZoomOut){
+            ZoomActive = false;
+        }
+        else if(playerMovement.GetGrounded()){
+            ZoomActive = true;
+        }
+
+
         if(ZoomActive){
             Cam.orthographicSize = Mathf.Lerp(Cam.orthographicSize, 10, Speed);
         }
