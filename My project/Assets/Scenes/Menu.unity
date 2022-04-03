@@ -3288,7 +3288,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: alpha0.0.7. pijpiwo
+  m_text: 'alpha0.8
+
+    jebacszatana'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb069356682ac4b46afdaae323755fd3, type: 2}
   m_sharedMaterial: {fileID: -4925210757582984281, guid: cb069356682ac4b46afdaae323755fd3, type: 2}
