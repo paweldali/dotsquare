@@ -10,6 +10,10 @@ public class PlayerLife : MonoBehaviour
     private GameMaster gm;
 
     [SerializeField] ParticleSystem deadParticle = null;
+    [SerializeField] ParticleSystem speedBoostParticle = null;
+    [SerializeField] ParticleSystem jumpBoostParticle = null;
+    [SerializeField] ParticleSystem groundCollisionParticle = null;
+    [SerializeField] ParticleSystem speedSlowParticle = null;
 
     private Timer timer;
 
@@ -58,18 +62,21 @@ public class PlayerLife : MonoBehaviour
     {
         Debug.Log("purple animation");
         anim.SetTrigger("Purple");
+        speedSlowParticle.Play();
     }
 
     private void OrangeJumper()
     {
         Debug.Log("oragne animation");
         anim.SetTrigger("Orange");
+        jumpBoostParticle.Play();
     }
 
     private void GreenBooster()
     {
         Debug.Log("green booster animation");
         anim.SetTrigger("Green");
+        speedBoostParticle.Play();
     }
 
     private void Die()
