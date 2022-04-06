@@ -13,7 +13,6 @@ public class CameraShaker : MonoBehaviour {
     public void FixedUpdate(){
         
         if(player.GetRedGrounded()){
-            Debug.Log("shake it money maker");
             ShakeIt();
         }
     }

@@ -31,7 +31,6 @@ public class TilesLevelSelector : MonoBehaviour{
         swiper.totalPages = numberOfPanels;
 
         for(int i = 1; i <= numberOfPanels; i++){
-            Debug.Log("loading panels " + i);
             GameObject panel = Instantiate(panelClone) as GameObject;
             panel.transform.SetParent(thisCanvas.transform, false);
             panel.transform.SetParent(levelHolder.transform);
@@ -40,7 +39,6 @@ public class TilesLevelSelector : MonoBehaviour{
             SetUpGrid(panel);
             int numberOfIcons = i == numberOfPanels ? numberOfLevels - currentLevelCount : amountPerPage;
             LoadIcons(numberOfIcons, panel);
-            Debug.Log("loading panels213 " + i);
         }
         Destroy(panelClone);
     }
@@ -52,7 +50,6 @@ public class TilesLevelSelector : MonoBehaviour{
     }
     void LoadIcons(int numberOfIcons, GameObject parentObject){
         for(int i = 1; i <= numberOfIcons; i++){
-            Debug.Log("loading icons " + i);
             currentLevelCount++;
             GameObject icon = Instantiate(levelIcon) as GameObject;
             icon.transform.SetParent(thisCanvas.transform, false);

@@ -24,6 +24,8 @@ public class SelectLevelMenu : MonoBehaviour
     public TextMeshProUGUI levelTriesTMP;
     public TextMeshProUGUI CalculatorDisplayTMP;
 
+    public TextMeshProUGUI ButtonText;
+
     private List<string> scenesNames = new List<string>();
     void Start()
     {
@@ -42,6 +44,17 @@ public class SelectLevelMenu : MonoBehaviour
             // Debug.Log(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
         }
 
+    }
+
+    public void LoadLevelByTileButton(){
+        int loadLevel = Int32.Parse(ButtonText.text);
+        gm.levelNumber = loadLevel;
+
+        SaveManager.instance.levelsTries[loadLevel - 1] += 1;
+        SaveManager.instance.Save();
+
+        SceneManager.LoadScene("Level" + Convert.ToString(loadLevel));
+        Debug.Log("Level" + Convert.ToString(loadLevel));
     }
 
     public void LoadSave()
@@ -75,6 +88,7 @@ public class SelectLevelMenu : MonoBehaviour
         {
             if (sceneName == ("Level" + levelNumber)){
                 levelDescriptionPanel.SetActive(true);
+                break;
             } 
         }
     }

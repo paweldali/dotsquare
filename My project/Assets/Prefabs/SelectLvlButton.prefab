@@ -122,16 +122,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3164815804124307925}
         m_TargetAssemblyTypeName: SelectLevelMenu, Assembly-CSharp
-        m_MethodName: Calculator
-        m_Mode: 5
+        m_MethodName: LoadLevelByTileButton
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 1
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 3268431343650715499}
   - component: {fileID: 3268431343650715501}
   - component: {fileID: 3268431343650715498}
+  - component: {fileID: 3164815804124307925}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -281,3 +282,21 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3164815804124307925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3268431343650715496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291b8643ea1d92943babd2ae43805516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDescriptionPanel: {fileID: 0}
+  levelNameTMP: {fileID: 0}
+  levelTimeTMP: {fileID: 0}
+  levelTriesTMP: {fileID: 0}
+  CalculatorDisplayTMP: {fileID: 0}
+  ButtonText: {fileID: 3268431343650715498}

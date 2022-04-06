@@ -44,7 +44,6 @@ public class GameMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("playin lvl " + levelNumber);
         if (levelNumber != SaveManager.instance.LastPlayedLevel)
         {
             SaveManager.instance.LastPlayedLevel = levelNumber;

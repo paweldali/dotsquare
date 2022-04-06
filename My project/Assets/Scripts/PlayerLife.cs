@@ -84,8 +84,6 @@ public class PlayerLife : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Death");
 
-        Debug.Log("ded");
-
         // GetComponent<ParticleSystem>().Play();
         // ParticleSystem.EmissionModule em = GetComponent<ParticleSystem>().emission;
         // em.enabled = true;
