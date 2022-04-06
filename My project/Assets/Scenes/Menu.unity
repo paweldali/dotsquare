@@ -1372,6 +1372,7 @@ MonoBehaviour:
   levelTimeTMP: {fileID: 666964457}
   levelTriesTMP: {fileID: 185867308}
   CalculatorDisplayTMP: {fileID: 733234428}
+  ButtonText: {fileID: 0}
 --- !u!1 &126460671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,7 +3389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: alpha0.9 prawie 1
+  m_text: 'alfa 0.9.0.997 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb069356682ac4b46afdaae323755fd3, type: 2}
   m_sharedMaterial: {fileID: -4925210757582984281, guid: cb069356682ac4b46afdaae323755fd3, type: 2}
@@ -3415,7 +3416,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.55
+  m_fontSize: 43.55
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7466,7 +7467,7 @@ MonoBehaviour:
   levelHolder: {fileID: 229684826}
   levelIcon: {fileID: 3268431342646433429, guid: faf8a436ada672745a96dd4d7ce61ac9, type: 3}
   thisCanvas: {fileID: 1925282093}
-  numberOfLevels: 20
+  numberOfLevels: 11
   iconSpacing: {x: 0, y: 0}
 --- !u!1 &1640687344
 GameObject:
@@ -9275,6 +9276,7 @@ MonoBehaviour:
   levelTimeTMP: {fileID: 666964457}
   levelTriesTMP: {fileID: 185867308}
   CalculatorDisplayTMP: {fileID: 0}
+  ButtonText: {fileID: 0}
 --- !u!1 &1951150945
 GameObject:
   m_ObjectHideFlags: 0
