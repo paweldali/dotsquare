@@ -1372,6 +1372,7 @@ MonoBehaviour:
   levelTimeTMP: {fileID: 666964457}
   levelTriesTMP: {fileID: 185867308}
   CalculatorDisplayTMP: {fileID: 733234428}
+  ButtonText: {fileID: 0}
 --- !u!1 &126460671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,7 +1541,7 @@ RectTransform:
   m_Children:
   - {fileID: 1870109700}
   m_Father: {fileID: 1925282094}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1831,12 +1832,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1925282094}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.002532959, y: -10.838}
-  m_SizeDelta: {x: -0.0049, y: -171.4367}
+  m_AnchoredPosition: {x: 0.002532959, y: 0.000015258789}
+  m_SizeDelta: {x: -0.0049, y: 0.000030518}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229684828
 MonoBehaviour:
@@ -3388,7 +3389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: alpha0.9 prawie 1
+  m_text: 'alfa 0.9.0.997 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cb069356682ac4b46afdaae323755fd3, type: 2}
   m_sharedMaterial: {fileID: -4925210757582984281, guid: cb069356682ac4b46afdaae323755fd3, type: 2}
@@ -3415,7 +3416,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 39.55
+  m_fontSize: 43.55
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6125,7 +6126,7 @@ RectTransform:
   m_Children:
   - {fileID: 245191129}
   m_Father: {fileID: 1925282094}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7466,7 +7467,7 @@ MonoBehaviour:
   levelHolder: {fileID: 229684826}
   levelIcon: {fileID: 3268431342646433429, guid: faf8a436ada672745a96dd4d7ce61ac9, type: 3}
   thisCanvas: {fileID: 1925282093}
-  numberOfLevels: 20
+  numberOfLevels: 11
   iconSpacing: {x: 0, y: 0}
 --- !u!1 &1640687344
 GameObject:
@@ -9247,9 +9248,9 @@ RectTransform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1465356854}
   - {fileID: 229684827}
   - {fileID: 166788334}
+  - {fileID: 1465356854}
   m_Father: {fileID: 1527191058}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9275,6 +9276,7 @@ MonoBehaviour:
   levelTimeTMP: {fileID: 666964457}
   levelTriesTMP: {fileID: 185867308}
   CalculatorDisplayTMP: {fileID: 0}
+  ButtonText: {fileID: 0}
 --- !u!1 &1951150945
 GameObject:
   m_ObjectHideFlags: 0
