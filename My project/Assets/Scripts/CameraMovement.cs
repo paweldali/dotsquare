@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraSmooth : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset;
