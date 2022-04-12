@@ -168,6 +168,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+--- !u!50 &2594557837596144729 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4316118741040859641, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
+  m_PrefabInstance: {fileID: 2298058173811670432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8912431696720966476 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7226877533386837740, guid: 6666f7697dc98df4fb4a289209cb5544, type: 3}
@@ -471,6 +476,22 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 8912431696720966580}
+    - target: {fileID: 8824231791912367921, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791912367921, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791912367921, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: smoothFactor
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8824231791912367921, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
+      propertyPath: PlayerRigidBody2D
+      value: 
+      objectReference: {fileID: 2594557837596144729}
     - target: {fileID: 8824231791912367926, guid: d12c1d7f9a5dad44795050d5a03f5977, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
