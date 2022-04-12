@@ -23,18 +23,18 @@ public class CameraMovement : MonoBehaviour
 
     Vector3 cameraAHeadOfPlayer()
     {
-        return new Vector3(offsetCount(PlayerRigidBody2D.velocity.x), offsetCount(PlayerRigidBody2D.velocity.y), -10);
+        return new Vector3(0, offsetCount(PlayerRigidBody2D.velocity.y), -10);
     }
 
     private float offsetCount(float value)
     {
-        if (value > 1)
+        if (value > 0.1f)
         {
-            return System.Math.Min(2f, value);
+            return System.Math.Min(1.5f, value);
         }
-        else if (value < -1)
+        else if (value < -0.1f)
         {
-            return System.Math.Max(-2f, value);
+            return System.Math.Max(-1.5f, value);
         }
         else
         {
