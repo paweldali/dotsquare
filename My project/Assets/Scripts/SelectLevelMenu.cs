@@ -114,6 +114,11 @@ public class SelectLevelMenu : MonoBehaviour
         CalculatorDisplayTMP.text = equation;
     }
 
+    public void Reset() {
+        equation = "";
+        CalculatorDisplayTMP.text = equation;
+    }
+
     public void Calculate()
     {
         if(equation == "") return;
