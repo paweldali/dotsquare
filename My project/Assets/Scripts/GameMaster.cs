@@ -18,7 +18,7 @@ public class GameMaster : MonoBehaviour
 
     public int levelNumber = 1;
 
-    public int numberOfLevels = 10;
+    public int numberOfLevels = 15;
 
     private Timer timer;
 
