@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
     private static GameMaster instance;
-    private AchievementManager achievementManager;
+    // private AchievementManager achievementManager;
     public Vector2 lastCheckPointPos;
 
     public Vector2 startPos;
@@ -37,7 +37,7 @@ public class GameMaster : MonoBehaviour
         }
 
         levelNumber = SaveManager.instance.LastPlayedLevel;
-        achievementManager = GameObject.FindGameObjectWithTag("AM").GetComponent<AchievementManager>();
+        // achievementManager = GameObject.FindGameObjectWithTag("AM").GetComponent<AchievementManager>();
         //timer = GameObject.Find("Timer").GetComponent<Timer>();
     }
 
@@ -67,8 +67,8 @@ public class GameMaster : MonoBehaviour
                 // Debug.Log(levelNumber + " level, new best time saved to file " + SaveManager.instance.bestTimes[levelNumber - 1]);
             }
 
-            achievementManager.SetLevelTime(levelTime);
-            achievementManager.CheckAchievementCompletion();
+            AchievementManager.instance.SetLevelTime(levelTime);
+            AchievementManager.instance.CheckAchievementCompletion();
 
 
             isLevelCompleted = false;

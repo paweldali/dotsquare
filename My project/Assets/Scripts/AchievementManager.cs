@@ -9,7 +9,7 @@ public class AchievementManager : MonoBehaviour
     public static AchievementManager instance;
     public static List<Achievement> achievements;
 
-    public static float LevelTime;
+    private float LevelTime;
 
     public bool AchievementUnlocked(string achievementName)
     {
