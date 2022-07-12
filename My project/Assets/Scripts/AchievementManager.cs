@@ -9,7 +9,7 @@ public class AchievementManager : MonoBehaviour
     public static AchievementManager instance;
     public static List<Achievement> achievements;
 
-    public float LevelTime;
+    public static float LevelTime;
 
     public bool AchievementUnlocked(string achievementName)
     {
@@ -42,6 +42,10 @@ public class AchievementManager : MonoBehaviour
         }
 
         InitializeAchievements();
+
+        foreach(var achievement in achievements){
+            Debug.Log(achievement.title + " ; " + AchievementUnlocked(achievement.title));
+        }
     }
 
     private void InitializeAchievements()
@@ -50,17 +54,23 @@ public class AchievementManager : MonoBehaviour
             return;
 
         achievements = new List<Achievement>();
+        achievements.Add(new Achievement("Turtle", "Complete level in above than 100 seconds. ", (object o) => LevelTime >= 100f));
+        achievements.Add(new Achievement("Bunny", "Complete level in less than 30 seconds. ", (object o) => LevelTime <= 30f));
         achievements.Add(new Achievement("Son Of Thunder", "Complete level in less than 10 seconds. ", (object o) => LevelTime <= 10f));
         achievements.Add(new Achievement("Impossible", "Complete level in less than 5 seconds.", (object o) => LevelTime <= 5f));
         achievements.Add(new Achievement("God or Cheater", "Complete level in less than 1 second.", (object o) => LevelTime <= 1f));
     }
 
-    private void Update()
-    {
-        CheckAchievementCompletion();
+    // private void Update()
+    // {
+    //     CheckAchievementCompletion();
+    // }
+
+    public void SetLevelTime(float levelTime){
+        LevelTime = levelTime;
     }
 
-    private void CheckAchievementCompletion()
+    public void CheckAchievementCompletion()
     {
         if (achievements == null)
             return;
@@ -94,7 +104,7 @@ public class Achievement
 
         if (RequirementsMet())
         {
-            Debug.Log($"{title}: {description}");
+            Debug.Log($"{title}: {description} COMPLETED!");
             achieved = true;
         }
     }
