@@ -114,28 +114,25 @@ public class PlayerMovement : MonoBehaviour
     {
         _timeToJumpEnterCollision = 0.5f;
         _grounded = true;
+        _isAlive = true;
+
+        _isSpeedBoosted = false;
+        _isSpeedSlowed = false;
         
         if (collision.gameObject.CompareTag("RedGround")) //ded
         {
             _redGrounded = true;
 
             _isAlive = false;
-            _isSpeedBoosted = false;
-            _isSpeedSlowed = false;
         }
         else if (collision.gameObject.CompareTag("Ground")) //normal
         {
-            _isAlive = true;
-            _isSpeedBoosted = false;
-            _isSpeedSlowed = false;
 
             // Debug.Log("entered ground");
         }
         else if (collision.gameObject.CompareTag("GreenGround")) //speed booster
         {
-            _isAlive = true;
             _isSpeedBoosted = true;
-            _isSpeedSlowed = false;
 
             // Debug.Log("GreenGround");
         }
@@ -143,17 +140,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _timeToJumpEnterCollision = 0f;
 
-            _isAlive = true;
-            _isSpeedBoosted = false;
-            _isSpeedSlowed = false;
-
-
             _rigidbody.AddForce(new Vector2(0, JumpForce * TrampolineJumpBoost), ForceMode2D.Impulse);
         }
         else if (collision.gameObject.CompareTag("PurpleGround"))
         { //slowing 
-            _isAlive = true;
-            _isSpeedBoosted = false;
             _isSpeedSlowed = true;
         }
         // else if (collision.gameObject.CompareTag("Marshmallow"))
