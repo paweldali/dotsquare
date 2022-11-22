@@ -127,7 +127,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Ground")) //normal
         {
-
             // Debug.Log("entered ground");
         }
         else if (collision.gameObject.CompareTag("GreenGround")) //speed booster
