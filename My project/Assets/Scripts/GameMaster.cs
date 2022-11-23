@@ -50,7 +50,6 @@ public class GameMaster : MonoBehaviour
             SaveManager.instance.Save();
         }
 
-
         if (isLevelCompleted)
         {
             Debug.Log("level completed");
@@ -59,7 +58,6 @@ public class GameMaster : MonoBehaviour
             // Debug.Log("level" + levelNumber +  "completed with time:" + levelTime.ToString());
 
             //save time
-
             if ((levelTime < SaveManager.instance.bestTimes[levelNumber - 1]) || SaveManager.instance.bestTimes[levelNumber - 1] == 0f)
             {
                 SaveManager.instance.bestTimes[levelNumber - 1] = levelTime;
@@ -69,7 +67,6 @@ public class GameMaster : MonoBehaviour
 
             AchievementManager.instance.SetLevelTime(levelTime);
             AchievementManager.instance.CheckAchievementCompletion();
-
 
             isLevelCompleted = false;
             SceneManager.LoadScene("FinishedLevel");

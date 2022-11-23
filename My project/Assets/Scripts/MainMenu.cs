@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     }
 
     public void PlayGame(){
+
         SaveManager.instance.levelsTries[gm.levelNumber - 1] += 1;
         SaveManager.instance.Save();
 
