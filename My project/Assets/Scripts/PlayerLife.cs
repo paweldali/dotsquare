@@ -42,7 +42,6 @@ public class PlayerLife : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("RedGround"))
         {
-
             Die();
         }
         else if (collision.gameObject.CompareTag("GreenGround"))

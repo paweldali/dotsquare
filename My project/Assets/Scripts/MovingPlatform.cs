@@ -8,8 +8,6 @@ public class MovingPlatform : MonoBehaviour
     public float speed;
     public Transform startPos;
 
-
-
     Vector3 nextPos;
 
     // Start is called before the first frame update
@@ -21,8 +19,6 @@ public class MovingPlatform : MonoBehaviour
     //update is called once per frame
     void Update()
     {
-        
-
         if (transform.position == pos1.position)
         {
             nextPos = pos2.position;
@@ -38,8 +34,6 @@ public class MovingPlatform : MonoBehaviour
 
     }
        
-   
-
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(pos1.position, pos2.position);

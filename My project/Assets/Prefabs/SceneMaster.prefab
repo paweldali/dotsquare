@@ -196,6 +196,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7018177913451523352}
     m_Modifications:
+    - target: {fileID: 2822521506743825191, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822521506743825191, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822521506743825191, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5005005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822521507330692842, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 196
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822521507330692842, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -266
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822521507791179079, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5005005
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822521507791179079, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822521507791179079, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5005005
+      objectReference: {fileID: 0}
     - target: {fileID: 7262280338610534166, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -204,6 +236,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 7843291040346889095}
+    - target: {fileID: 7262280339339117447, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7262280340076609032, guid: 4b3ef16e98b2afa44ba98e50fd2311cb, type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
