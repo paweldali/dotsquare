@@ -1,6 +1,12 @@
-# aniewiem2
-aniewiemtez2
+### DotSquare game 
 
-## kocio fajny
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+#####
+DotSquare is a minimalistic speedrun game where you try to **finish levels** as fast as you can
+
+Featuring many chapters with several different mechanics and themes
+#
+
+![alt text](dotsquare-1.png)
+
+
 
